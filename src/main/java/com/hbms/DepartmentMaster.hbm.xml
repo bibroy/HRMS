@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.Department" schema="HRMS" table="DEPARTMENT_MASTER">
+    <id name="departmentId" type="big_decimal">
+      <column name="DEPARTMENT_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="departmentName" type="string">
+      <column length="30" name="DEPARTMENT_NAME"/>
+    </property>
+    <property name="departmentDescription" type="string">
+      <column name="DEPARTMENT_DESCRIPTION"/>
+    </property>
+    <property name="entrydate" type="date">
+      <column length="7" name="ENTRYDATE"/>
+    </property>
+    <property name="modifydate" type="date">
+      <column length="7" name="MODIFYDATE"/>
+    </property>
+    <property name="createdby" type="big_decimal">
+      <column name="CREATEDBY" precision="22" scale="0"/>
+    </property>
+    <property name="modifiedby" type="big_decimal">
+      <column name="MODIFIEDBY" precision="22" scale="0"/>
+    </property>
+    <property name="departmentCode" type="string">
+      <column length="25" name="DEPARTMENT_CODE"/>
+    </property>
+    <property name="status" type="string">
+      <column length="4" name="STATUS"/>
+    </property>
+    <property name="companyCode" type="big_decimal">
+      <column name="COMPANY_CODE" precision="22" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

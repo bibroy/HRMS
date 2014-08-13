@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.City" schema="HRMS" table="CITY_MASTER">
+    <id name="cityId" type="big_decimal">
+      <column name="CITY_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="com.pojo.State" fetch="select" name="stateMaster">
+      <column name="STATE_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="com.pojo.CountryMaster" fetch="select" name="countryMaster">
+      <column name="COUNTRY_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="cityName" type="string">
+      <column length="25" name="CITY_NAME"/>
+    </property>
+    <property name="creationDate" type="date">
+      <column length="7" name="CREATION_DATE"/>
+    </property>
+    <property name="modificationDate" type="date">
+      <column length="7" name="MODIFICATION_DATE"/>
+    </property>
+    <property name="createdBy" type="string">
+      <column length="25" name="CREATED_BY"/>
+    </property>
+    <property name="modifiedBy" type="string">
+      <column length="25" name="MODIFIED_BY"/>
+    </property>
+    <property name="status" type="string">
+      <column length="25" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

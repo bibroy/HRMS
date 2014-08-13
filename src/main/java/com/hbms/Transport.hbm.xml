@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.Transport" schema="HRMS" table="TRANSPORT">
+    <id name="requestId" type="big_decimal">
+      <column name="REQUEST_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeid" type="string">
+      <column length="15" name="EMPLOYEEID"/>
+    </property>
+    <property name="transportname" type="string">
+      <column name="TRANSPORTNAME"/>
+    </property>
+    <property name="transportFrom" type="string">
+      <column name="TRANSPORT_FROM"/>
+    </property>
+    <property name="transportTo" type="string">
+      <column name="TRANSPORT_TO"/>
+    </property>
+    <property name="transportDate" type="date">
+      <column length="7" name="TRANSPORT_DATE"/>
+    </property>
+    <property name="departuretime" type="string">
+      <column name="DEPARTURETIME"/>
+    </property>
+    <property name="reason" type="string">
+      <column name="REASON"/>
+    </property>
+    <property name="requeststatus" type="string">
+      <column name="REQUESTSTATUS"/>
+    </property>
+    <property name="tomail" type="string">
+      <column name="TOMAIL"/>
+    </property>
+    <property name="approvalauthoriyEmployeeid" type="string">
+      <column length="15" name="APPROVALAUTHORIY_EMPLOYEEID"/>
+    </property>
+    <property name="requestdate" type="date">
+      <column length="7" name="REQUESTDATE"/>
+    </property>
+    <property name="approvaldate" type="date">
+      <column length="7" name="APPROVALDATE"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.pojo.LeavePerRole" table="LEAVE_STATUS_PER_ROLE">
+    <id column="LEAVE_STATUS_ID" name="id">
+      <generator class="increment"/>
+    </id>
+    <property column="LEAVE_ID" name="leaveId"/>
+    <property column="MAX_DAYS" name="maxDays"/>
+    <property column="ROLE_ID" name="roleId"/>
+    <property column="FLAG" name="flag"/>
+    <property column="APPLICABLE_FROM" name="leaveApplicableFrom"/>
+    <property column="EMPLOYEE_STATUS" name="employeeConfirmationStatus"/>
+    <many-to-one class="com.pojo.LeaveDetails" column="LEAVE_ID" insert="false" name="leave" update="false"/>
+    <many-to-one class="com.pojo.RoleMaster" column="ROLE_ID" insert="false" name="role" update="false"/>
+  </class>
+</hibernate-mapping>

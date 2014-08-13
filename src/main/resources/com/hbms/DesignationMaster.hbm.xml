@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.DesignationMaster" schema="HRMS" table="DESIGNATION_MASTER">
+    <id name="designationId" type="big_decimal">
+      <column name="DESIGNATION_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="com.pojo.RoleMaster" fetch="select" name="roleMaster">
+      <column name="ROLE_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="designationName" type="string">
+      <column length="20" name="DESIGNATION_NAME"/>
+    </property>
+    <property name="designationDescription" type="string">
+      <column length="100" name="DESIGNATION_DESCRIPTION"/>
+    </property>
+    <property name="entryDate" type="date">
+      <column length="7" name="ENTRY_DATE"/>
+    </property>
+    <property name="branchCode" type="big_decimal">
+      <column name="BRANCH_CODE" precision="22" scale="0"/>
+    </property>
+    <property name="companyCode" type="big_decimal">
+      <column name="COMPANY_CODE" precision="22" scale="0"/>
+    </property>
+    <property name="modifyDate" type="date">
+      <column length="7" name="MODIFY_DATE"/>
+    </property>
+    <property name="createdBy" type="string">
+      <column length="15" name="CREATED_BY"/>
+    </property>
+    <property name="modifiedBy" type="string">
+      <column length="15" name="MODIFIED_BY"/>
+    </property>
+    <property name="status" type="string">
+      <column length="4" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

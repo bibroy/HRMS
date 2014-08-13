@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="HourtimeSheetForm" type="com.forms.HourtimeSheetForm"/>
+        <form-bean name="RecuritmentForm" type="com.forms.RecuritmentForm"/>
+        <form-bean name="EmployeePersonalInfoForm" type="com.forms.EmployeePersonalInfoForm"/>
+        <form-bean name="ProjectForm" type="com.forms.ProjectForm"/>
+        <form-bean name="FeedBackForm" type="com.forms.FeedBackForm"/>
+        <form-bean name="TrainingForm" type="com.forms.TrainingForm"/>
+        <form-bean name="SkillsForm" type="com.forms.SkillsForm"/>
+        <form-bean name="TrainingTransactionForm" type="com.forms.TrainingTransactionForm"/>
+        <form-bean name="ConsultancyForm" type="com.forms.ConsultancyForm"/>
+        <form-bean name="ClientGroupForm" type="com.forms.ClientGroupForm"/>
+        <form-bean name="ClientForm" type="com.forms.ClientForm"/>
+        <form-bean name="RecuritmentForm" type="com.forms.RecuritmentForm"/>
+        <form-bean name="TaskForm" type="com.forms.TaskForm"/>
+    </form-beans >
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action input="/TimeSheet/TimeSheetAdd.jsp" name="HourtimeSheetForm" path="/HourtimeSheet" scope="session" type="com.action.HouetimeSheetAction" validate="false" >
+            <forward name="success" path="/TimeSheet/TimeSheetAdd.jsp"/>
+        </action>
+        
+      
+        <action input="/ProjectManagement/taskEdit.jsp" name="TaskForm" parameter="method" path="/taskedit" scope="request" type="com.action.TaskAction" validate="false">
+            <forward name="success" path="/ProjectManagement/taskEdit.jsp"/>
+        </action>
+
+
+        <action input="/ProjectManagement/taskAdd.jsp" name="ProjectForm" parameter="method" path="/taskadd" scope="request" type="com.action.ProjectAction" validate="false">
+            <forward name="success" path="/ProjectManagement/taskAdd.jsp"/>
+        </action>
+
+        <action input="/ProjectManagement/projectEdit.jsp" name="ProjectForm" parameter="method" path="/loadprojectedit" scope="request" type="com.action.ProjectAction" validate="false">
+            <forward name="success" path="/ProjectManagement/projectEdit.jsp"/>
+        </action>
+        <action input="/ProjectManagement/projectEdit.jsp" name="ProjectForm" parameter="method" path="/projectEdit" scope="request" type="com.action.ProjectAction" validate="false">
+            <forward name="success" path="/ProjectManagement/projectEdit.jsp"/>
+        </action>
+        <action input="/ProjectManagement/viewProjectDetail.jsp" name="ProjectForm" parameter="method" path="/loadprojectview" scope="request" type="com.action.ProjectAction" validate="false">
+            <forward name="success" path="/ProjectManagement/viewProjectDetail.jsp"/>
+        </action>
+        <action input="/ProjectManagement/projectAdd" name="ProjectForm" parameter="method" path="/projectAdd" scope="request" type="com.action.ProjectAction" validate="false">
+            <forward name="success" path="/ProjectManagement/projectAdd.jsp"/>
+        </action>
+        <action input="/ProjectManagement/New Project SetUp.jsp" name="ProjectForm" parameter="method" path="/loadprojectadd" scope="request" type="com.action.ProjectAction" validate="false">
+            <forward name="success" path="/ProjectManagement/projectAdd.jsp"/>
+        </action>
+        <action input="/ProjectManagement/clientEdit.jsp" name="ClientForm" parameter="method" path="/clientedit" scope="request" type="com.action.ClientAction" validate="false">
+            <forward name="success" path="/ProjectManagement/clientEdit.jsp"/>
+        </action>
+        <action input="/ProjectManagement/clientEdit.jsp" name="ClientForm" parameter="method" path="/loadclientedit" scope="request" type="com.action.ClientAction" validate="false">
+            <forward name="success" path="/ProjectManagement/clientEdit.jsp"/>
+        </action>
+
+        <action input="/" name="ClientForm" path="/loadclientadd" scope="request" type="com.action.ClientAction" parameter="method" validate="false">
+            <forward name="success"  path="/ProjectManagement/clientAdd.jsp"/>
+            <forward name="failure"  path="/ProjectManagement/clientAdd.jsp"/>
+        </action>
+
+        <action input="/ProjectManagement/clientAdd.jsp" name="ClientForm" parameter="method" path="/clientadd" scope="request" type="com.action.ClientAction" validate="false">
+            <forward name="success" path="/ProjectManagement/clientAdd.jsp"/>
+        </action>
+        <action input="/ProjectManagement/clientGroupAdd.jsp" name="ClientGroupForm" parameter="method" path="/clientgroup" scope="request" type="com.action.ClientGroupAction" validate="false">
+            <forward name="success" path="/ProjectManagement/clientGroupAdd.jsp"/>
+        </action>
+
+        <action input="/Training/trainingApprovalHOD.jsp" name="TrainingTransactionForm" parameter="method" path="/trainingApprovalHOD" scope="request" type="com.action.TrainingTransactionAction" validate="false">
+            <forward name="success"  path="/Training/trainingApprovalHOD.jsp"/>
+            <forward name="transactionReport"  path="/Training/trainingTransactionReport.jsp"/>
+        </action>
+        <action input="/trainingAdd" name="TrainingForm" parameter="method" path="/trainingAdd" scope="request" type="com.action.TrainingAction" validate="false">
+            <forward name="success"  path="/Training/trainingMaster.jsp"/>
+            <forward name="viewTrainingReport"  path="/Training/trainingReport.jsp"/>
+        </action>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        <action input="/loadTraining" name="ConsultancyForm" path="/loadTraining" scope="request" type="com.action.TrainingTransactionAction" parameter="method" validate="false">
+            <forward name="success" path="/Training/trainingList.jsp"/>
+            <forward name="failure" path="/index.jsp"/>
+        </action>
+        <action input="/loadSkills" name="SkillsForm" path="/loadSkills" scope="request" type="com.action.SkillsModifyAction" parameter="method" validate="false">
+            <forward name="success" path="/Training/skilltypelist.jsp"/>
+            <forward name="failure" path="/index.jsp"/>
+        </action>
+
+        <action input="/" name="TrainingTransactionForm" parameter="method" path="/trainingApprovalHR" scope="request" type="com.action.TrainingTransactionAction" validate="false">
+            <forward name="success"  path="/Training/trainingApprovalHR.jsp"/>
+            <forward name="transactionReportHR"  path="/Training/trainingTransactionReportHOD.jsp"/>
+        </action>
+        
+        <action input="/" name="TrainingTransactionForm" parameter="method" path="/trainingRequestEmployee" scope="request" type="com.action.TrainingTransactionAction" validate="false">
+            <forward name="success"  path="/Training/trainingRequestEmployee.jsp"/>
+        </action>
+
+        <action input="/Training/trainingRequestHOD.jsp" name="TrainingTransactionForm" parameter="method" path="/trainingRequestHOD" scope="request" type="com.action.TrainingTransactionAction" validate="false">
+            <forward name="success"  path="/Training/trainingRequestHOD.jsp"/>
+        </action>
+        <action input="/trainingTransaction" name="TrainingTransactionForm" parameter="method" path="/trainingTransaction" scope="request" type="com.action.TrainingTransactionAction" validate="false">
+            <forward name="transactionReport"  path="/Training/trainingTransactionReport.jsp"/>
+            <forward name="transactionReportHR"  path="/Training/trainingTransactionReportHR.jsp"/>
+            <forward name="transactionReportHOD"  path="/Training/trainingTransactionReportHOD.jsp"/>
+            <forward name="transactionReportAppHR" path="/Training/trainingApprovalReportHR.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="TaskForm" parameter="method" path="/taskadd1" scope="session" type="com.action.TaskAction" validate="false">
+            <forward name="success" path="/ProjectManagement/taskAdd.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="TaskForm" parameter="method" path="/loadtaskedit" scope="session" type="com.action.TaskAction" validate="false">
+            <forward name="success" path="/ProjectManagement/taskEdit.jsp"/>
+        </action>
+        
+
+        <!-- Add for traning transaction report -->
+        <!--
+        <action input="/trainingTransaction" name="TrainingTransactionForm" parameter="method" path="/trainingTransaction" scope="request" type="com.action.TrainingTransactionAction" validate="false">
+            <forward name="transactionReport"  path="/Training/trainingTransactionReport.jsp"/>
+            <forward name="transactionReportHR"  path="/Training/trainingTransactionReportHR.jsp"/>
+            <forward name="transactionReportHOD"  path="/Training/trainingTransactionReportHOD.jsp"/>
+        </action>
+        -->
+        
+        <action path="/editEmployee" type="com.action.Recuritment"/>
+    </action-mappings>
+
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.pojo.Training" table="training_master">
+    <id column="training_id" name="trainingId">
+      <generator class="increment"/>
+    </id>
+    <property column="training_name" generated="never" lazy="false" name="trainingName" optimistic-lock="true" unique="false"/>
+    <property column="training_type" generated="never" lazy="false" name="trainingType" optimistic-lock="true" unique="false"/>
+    <property column="trainer" generated="never" lazy="false" name="trainer" optimistic-lock="true" unique="false"/>
+    <property column="CONSULTACY_ID" generated="never" lazy="false" name="consultancyId" optimistic-lock="true" unique="false"/>
+    <property column="status" generated="never" lazy="false" name="status" optimistic-lock="true" unique="false"/>
+    <property column="DEPARTMENT_ID" generated="never" lazy="false" name="id" optimistic-lock="true" type="integer" unique="false"/>
+    <property column="skill_id" generated="never" lazy="false" name="skillId" optimistic-lock="true" type="integer" unique="false"/>
+    <property column="type_Id" generated="never" lazy="false" name="typeId" optimistic-lock="true" type="integer" unique="false"/>
+    <!--
+        <many-to-one class="com.pojo.Department" column="DEPARTMENT_ID" insert="false" lazy="false" name="dept" update="false"/>
+        <many-to-one class="com.pojo.Skills" column="skill_id" insert="false" lazy="false" name="skill" update="false"/>
+   
+        <bag cascade="all-delete-orphan" inverse="true" lazy="false" name="trainingPosition" table="TRAINING_POSITION" >
+            <key column="training_id" not-null="true" foreign-key="true" update="true" />
+            <one-to-many class="com.pojo.TrainingPosition" />
+        </bag>
+   -->
+    <!--many-to-one class="com.pojo.Consultancy" column="CONSULTACY_ID" insert="false" lazy="false" name="consultancy" update="false"/-->
+  </class>
+</hibernate-mapping>

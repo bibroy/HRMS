@@ -1,0 +1,151 @@
+/* 
+    Document   : style
+    Created on : Oct 23, 2010, 2:43:45 PM
+    Author     : computer4
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+a
+{
+    text-decoration: none;
+}
+.heading
+{
+    background: url(../images/img01.jpg) repeat-x bottom;
+    font-size: 32px;
+    color:brown;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 940px;
+}
+#footer {
+    width: 940px;
+    height: 5px;
+    margin: 0 auto;
+    padding: 0px 0 0px 0;
+    border-top: 4px solid #EBE6D1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#footer p {
+    margin: 0;
+    padding-top: 2px;
+    line-height: normal;
+    font-size: 10px;
+    text-transform: inherit;
+    text-align: left;
+    color: #444444;
+}
+#sidebar
+{
+    vertical-align: top;      
+}
+
+#sidebar h2 {
+    background: url(../images/img02.jpg) no-repeat left top;
+    padding-left: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    letter-spacing: -.5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#sidebar p {
+    margin: 0 0px;
+    padding: 10px 30px 20px 30px;
+    text-align: justify;
+}
+
+.page_right
+{
+    background:#FFFFFF;
+    text-align: left;
+    vertical-align: middle;
+    text-align: center;
+    height: 217px;
+    background: url(../images/login_mid.gif);
+    width: 964px;
+}
+
+.txtfield
+{
+    background:url(../images/login_text.jpg) no-repeat;
+    height: 28px;
+    width: 196px;
+    border: 0;
+    elevation:level;
+}
+.label
+{
+    color:#AD3333;
+    width: 200px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.label_head
+{
+    background: #aba41a;
+    font-size: 20px;
+    width: 250px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#AD3333;
+}
+.login_top
+{
+    background: url(../images/login_top.gif) no-repeat #FFFFFF;
+    width: 961px;
+    height: 29px;
+}
+
+
+.messages
+{
+    color:green;
+}
+.warnings
+{
+    color:red;
+}
+fieldset
+{
+    border-color: #AD3333;
+    
+}
+legend
+{
+    border-style: outset;
+    border-color: lightsalmon;
+}
+
+/*
+.body_top
+{
+	background:url(../images/text_top.gif) no-repeat;
+	width: 761px;
+	height: 15px;
+}
+.body_mid
+{
+	background:url(../images/text_mid.gif) repeat-y;
+	width: 761px;
+	height: 251px;
+}
+.body_bottom
+{
+	background:url(../images/text_bottom.gif) no-repeat;
+	width: 761px;
+	height: 13px;
+}
+        */

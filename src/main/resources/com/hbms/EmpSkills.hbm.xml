@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.EmpSkills" schema="HRMS" table="EMP_SKILLS">
+    <id name="id" type="java.lang.Integer">
+      <column name="ID" precision="15" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeid" type="string">
+      <column length="20" name="EMPLOYEE_ID"/>
+    </property>
+    <property name="skills" type="string">
+      <column length="20" name="SKILLS"/>
+    </property>
+    <property name="proficiency" type="string">
+      <column length="20" name="PROFICIENCY"/>
+    </property>
+  </class>
+</hibernate-mapping>

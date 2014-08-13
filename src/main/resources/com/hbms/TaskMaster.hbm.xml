@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.TaskMaster" schema="HRMS" table="TASK_MASTER">
+    <id name="taskId" type="big_decimal">
+      <column name="TASK_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="taskName" type="string">
+      <column length="50" name="TASK_NAME"/>
+    </property>
+    <property name="taskDescription" type="string">
+      <column name="TASK_DESCRIPTION"/>
+    </property>
+    <property name="status" type="string">
+      <column length="25" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

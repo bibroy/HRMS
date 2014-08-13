@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.BranchMaster" schema="HRMS" table="BRANCH_MASTER">
+    <id name="branchId" type="big_decimal">
+      <column name="BRANCH_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="branchName" type="string">
+      <column length="100" name="BRANCH_NAME"/>
+    </property>
+    <property name="branchCode" type="string">
+      <column length="10" name="BRANCH_CODE"/>
+    </property>
+    <property name="branchAddress" type="string">
+      <column length="100" name="BRANCH_ADDRESS"/>
+    </property>
+    <property name="branchStateid" type="big_decimal">
+      <column name="BRANCH_STATEID" precision="22" scale="0"/>
+    </property>
+    <property name="branchCityid" type="big_decimal">
+      <column name="BRANCH_CITYID" precision="22" scale="0"/>
+    </property>
+    <property name="branchPincode" type="string">
+      <column length="10" name="BRANCH_PINCODE"/>
+    </property>
+    <property name="branchCreationdate" type="date">
+      <column length="7" name="BRANCH_CREATIONDATE"/>
+    </property>
+    <property name="branchCreatorid" type="big_decimal">
+      <column name="BRANCH_CREATORID" precision="22" scale="0"/>
+    </property>
+    <property name="branchType" type="string">
+      <column length="50" name="BRANCH_TYPE"/>
+    </property>
+    <many-to-one class="com.pojo.Company" fetch="select" name="company">
+      <column name="COMPANY_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="currency" type="string">
+      <column length="50" name="CURRENCY"/>
+    </property>
+    <property name="modifierId" type="big_decimal">
+      <column name="MODIFIER_ID" precision="22" scale="0"/>
+    </property>
+    <property name="modifiedDate" type="date">
+      <column length="7" name="MODIFIED_DATE"/>
+    </property>
+    <property name="branchfax" type="string">
+      <column length="20" name="BRANCHFAX"/>
+    </property>
+    <property name="branchemail" type="string">
+      <column length="20" name="BRANCHEMAIL"/>
+    </property>
+    <property name="contactNumber" type="string">
+      <column length="20" name="CONTACT_NUMBER"/>
+    </property>
+    <property name="branchCountryid" type="big_decimal">
+      <column name="BRANCH_COUNTRYID" precision="22" scale="0"/>
+    </property>
+    <property name="status" type="string">
+      <column length="5" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

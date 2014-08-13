@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.Task" table="TASK_MASTER">
+    <id column="TASK_ID" name="taskId">
+      <generator class="increment"/>
+    </id>
+    <property column="TASK_DESCRIPTION" name="taskDescription"/>
+    <property column="TASK_NAME" name="taskName"/>
+    <property column="STATUS" name="status"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.Project" table="PROJECT_MASTER" >
+    <id name="id" type="java.lang.Integer">
+      <column precision="10" name="id"/>
+      <generator class="assigned"/>
+    </id>
+   <property column="clientid" name="clientId"/>
+    <property column="createdby" name="createdBy"/>
+    <property column="startdate" name="startDate"/>
+    <property column="duedate" name="dueDate" type="date"/>
+    <property column="descrip" name="desc"/>
+    <property column="enddate" name="endDate" type="date"/>
+    <property column="entrydate" name="entryDate"/>
+    <property column="modifiedby" name="modifiedBy"/>
+    <property column="modifydate" name="modifyDate"/>
+    <property column="PLANNED_TIME" name="plannedTime"/>
+    <property column="projectcode" name="projectCode" type="string"/>
+    <property column="PROJECTNAME" name="projectName"/>
+    <property column="projectstatus" name="projectStatus"/>
+    <property column="status" name="status"/>
+    <property column="MANAGER_ID" name="managerId"/>
+    <property column="PROJECT_TECHNOLOGY" name="technology"/>
+    <property column="MAXIMUM_RESOURCE" name="maximumResource"/>
+    <property column="DEPARTMENT_ID" name="departmentId"/>
+    <property column="ACTUAL_STARTDATE" name="actualStartDate"/>
+    <property column="ACTUAL_ENDDATE" name="actualEndDate"/>
+    <many-to-one class="com.pojo.Client" column="clientid" insert="false" name="client" update="false" fetch="select"/>
+  </class>
+</hibernate-mapping>

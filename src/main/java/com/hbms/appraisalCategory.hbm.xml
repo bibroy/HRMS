@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.AppraisalCategory" table="appraisal_category">
+    <id column="category_code" name="category_code">
+      <generator class="increment"/>
+    </id>
+    <property column="category_name" lazy="false" name="category_name"/>
+    <property column="category_description" lazy="false" name="category_description"/>
+    <property column="created_by" lazy="false" name="created_by"/>
+    <property column="creation_date" lazy="false" name="creation_date"/>
+    <property column="modification_date" lazy="false" name="modification_date"/>
+    <property column="modified_by" lazy="false" name="modified_by"/>
+    <!--   <property  lazy="false" name="setup_status" formula="(select distinct a.status from appraisal_setup a where a.category_id=category_code)"  /> -->
+    <property column="status" lazy="false" name="status"/>
+  </class>
+</hibernate-mapping>

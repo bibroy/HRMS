@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.AppraisalGrade" schema="HRMS" table="APPRAISAL_GRADE_MASTER">
+    <id name="gradeName" type="string">
+      <column length="40" name="GRADE_NAME"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="gradeCode" type="big_decimal">
+      <column name="GRADE_CODE" precision="22" scale="0"/>
+    </property>
+    <property name="gradePoint" type="big_decimal">
+      <column name="GRADE_POINT" precision="22" scale="0"/>
+    </property>
+    <property name="creationDate" type="serializable">
+      <column name="CREATION_DATE"/>
+    </property>
+    <property name="modificationDate" type="serializable">
+      <column name="MODIFICATION_DATE"/>
+    </property>
+    <property name="createdBy" type="big_decimal">
+      <column name="CREATED_BY" precision="22" scale="0"/>
+    </property>
+    <property name="modifiedBy" type="big_decimal">
+      <column name="MODIFIED_BY" precision="22" scale="0"/>
+    </property>
+    <property name="status" type="string">
+      <column length="10" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

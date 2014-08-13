@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.AppraisalSetup" table="appraisal_setup">
+    <id column="id" name="id">
+      <generator class="increment"/>
+    </id>
+    <property column="category_id" lazy="false" name="category_id"/>
+    <property column="appraiser" lazy="false" name="appraiser"/>
+    <property column="response_type" lazy="false" name="response_type"/>
+    <property column="COMPANY_ID" lazy="false" name="company_id"/>
+    <property formula="(select c.category_name from Appraisal_category c where c.category_code=category_id)" name="category_name"/>
+    <property formula="(select c.company_name from company_master c where c.company_code=company_id)" name="company_name"/>
+    <property column="DURATION" lazy="false" name="duration"/>
+    <property column="status" lazy="false" name="status"/>
+    <property column="DEPARTMENT_ID" lazy="false" name="department_id"/>
+    <property formula="(select d.department_name from department_master d where d.department_id=department_id)" name="department_name"/>
+    <property column="FEEDBACK_STATUS" lazy="false" name="feedback_status"/>
+    <property column="APPRAISAL_MESSAGE" lazy="false" name="appraisal_message"/>
+  </class>
+</hibernate-mapping>

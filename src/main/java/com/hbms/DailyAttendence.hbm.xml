@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.DailyAttendance" schema="HRMS" table="attendance_daily">
+    <id name="id" type="java.lang.Integer">
+      <column name="ID" precision="15" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="attdate" type="string">
+      <column length="20" name="ATTDATE"/>
+    </property>
+    <property name="userid" type="string">
+      <column length="20" name="USERID"/>
+    </property>
+    <property name="empname" type="string">
+      <column length="30" name="EMPNAME"/>
+    </property>
+    <property name="department" type="string">
+      <column length="30" name="DEPARTMENT"/>
+    </property>
+    <property name="shiftname" type="string">
+      <column length="20" name="SHIFTNAME"/>
+    </property>
+    <property name="deviceId" type="string">
+      <column length="20" name="DEVICEID"/>
+    </property>
+    <property name="timein" type="string">
+      <column length="20" name="TIMEIN"/>
+    </property>
+    <property name="latein" type="string">
+      <column length="20" name="LATEIN"/>
+    </property>
+    <property name="breakout" type="string">
+      <column length="20" name="BREAKOUT"/>
+    </property>
+    <property name="breakin" type="string">
+      <column length="20" name="BREAKIN"/>
+    </property>
+    <property name="timeout" type="string">
+      <column length="20" name="TIME_OUT"/>
+    </property>
+    <property name="earlyout" type="string">
+      <column length="20" name="EARLYOUT"/>
+    </property>
+    <property name="totalwork" type="string">
+      <column length="20" name="TOTALWORK"/>
+    </property>
+    <property name="overtime" type="string">
+      <column length="20" name="OUVERTIME"/>
+    </property>
+  </class>
+</hibernate-mapping>

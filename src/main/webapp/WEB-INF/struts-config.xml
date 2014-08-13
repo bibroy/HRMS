@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="KeyPositionFor" type="com.forms.KeyPositionFor"/>
+        <form-bean name="ProjectEmpForm" type="com.forms.ProjectEmpForm"/>
+        <form-bean name="ProjectJobsForm" type="com.forms.ProjectJobsForm"/>
+        <form-bean name="GoalSettingModifyForm" type="com.forms.GoalSettingModifyForm"/>
+        <form-bean name="GoalSettingForm" type="com.forms.GoalSettingForm"/>
+        <form-bean name="PhoneReimbursementForm" type="com.forms.PhoneReimbursementForm"/>
+        <form-bean name="EmployeeInsuranceForm" type="com.forms.EmployeeInsuranceForm"/>
+        <form-bean name="FacilityRequestForm" type="com.forms.FacilityRequestForm"/>
+        <form-bean name="RelatedDocumentForm" type="com.forms.RelatedDocumentForm"/>
+        <form-bean name="ConferenceRoomBookingForm" type="com.forms.ConferenceRoomBookingForm"/>
+        <form-bean name="EmployeeCertificationForm" type="com.forms.EmployeeCertificationForm"/>
+        <form-bean name="TransportForm" type="com.forms.TransportForm"/>
+        <form-bean name="ComplaintsForm" type="com.forms.ComplaintsForm"/>
+        <form-bean name="JobTypeForm" type="com.forms.JobTypeForm"/>
+        <form-bean name="DepartmentForm" type="com.forms.DepartmentForm"/>
+        <form-bean name="BranchForm" type="com.forms.BranchForm"/>
+        <form-bean name="VacanciesForm" type="com.forms.VacanciesForm"/>
+        <form-bean name="KeyPositionForm" type="com.forms.KeyPositionForm"/>
+        <form-bean name="KeyPositionFom" type="com.forms.KeyPositionFom"/>
+        <form-bean name="EmpSkillForm" type="com.forms.EmpSkillForm"/>
+        <form-bean name="AttendanceForm" type="com.forms.AttendanceForm"/>
+        <form-bean name="VisaRequestDetailsForm" type="com.forms.VisaRequestDetailsForm"/>
+        <form-bean name="TimeSheetForm" type="com.forms.TimeSheetForm"/>
+        <form-bean name="SalaryForm" type="com.forms.SalaryForm"/>
+        <form-bean name="RecruitmentMarksForm" type="com.forms.RecruitmentMarksForm"/>
+        <form-bean name="RecruitmentForm" type="com.forms.RecruitmentForm"/>
+        <form-bean name="AppraisalResultSumForm" type="com.forms.AppraisalResultSumForm"/>
+        <form-bean name="VisaPassportForm" type="com.forms.VisaPassportForm"/>
+        <form-bean name="SkillsForm" type="com.forms.SkillsForm"/>
+        <form-bean name="AppraisalResultForm" type="com.forms.AppraisalResultForm"/>
+        <form-bean name="AppraisalProcessForm" type="com.forms.AppraisalProcessForm"/>
+        <form-bean name="AppraisalQuestionForm" type="com.forms.AppraisalQuestionForm"/>
+        <form-bean name="AppraisalCategoryForm" type="com.forms.AppraisalCategoryForm"/>
+        <form-bean name="AppraisalSetupForm" type="com.forms.AppraisalSetupForm"/>
+        <form-bean name="EmployeePersonalInfoForm" type="com.forms.EmployeePersonalInfoForm"/>
+        <form-bean name="CompanyForm" type="com.forms.CompanyForm"/>
+        <form-bean name="reimbursmentForm" type="com.forms.ReimbursmentForm"/>
+        <form-bean name="advancedSalaryRequestForm" type="com.forms.AdvancedSalaryRequestForm"/>
+        <form-bean name="AirTicketRequestForm" type="com.forms.AirTicketRequestForm"/>
+        <form-bean name="LoanForm" type="com.forms.LoanForm"/>
+        <form-bean name="LeaveForm" type="com.forms.LeaveForm"/>
+        <form-bean name="LoginForm" type="com.forms.LoginForm"/>
+    
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="sessionout" path="/SessionExpired.jsp"/>
+        <forward name="errorpage" path="/SessionExpired.jsp"/>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+
+    
+
+        <action input="/" name="CompanyForm" parameter="method" path="/ViewCompanyReport" scope="session" type="com.action.CompanyAction">
+            <forward name="success" path="/Company/CompanyReport.jsp"/>
+        </action>
+
+        <action input="/Login.jsp" name="LoginForm" parameter="method" path="/login" scope="session" type="com.action.LoginAction">
+            <forward name="success" path="/hrnet_admin/index.jsp"/>
+            <forward name="failure" path="/Login.jsp"/>
+        </action>
+        <action  name="LoginForm" parameter="method" path="/logout" scope="session" type="com.action.LoginAction">
+            <forward name="success" path="/Login.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="LeaveForm" parameter="method" path="/ShowForm" scope="session" type="com.action.LeaveAction">
+            <forward name="success" path="/leave/LeaveRequest.jsp"/>
+        </action>
+        <action input="/" name="LeaveForm" parameter="method" path="/Add" scope="session" type="com.action.LeaveAction">
+            <forward name="success" path="/leave/LeaveRequest.jsp"/>
+        </action>
+
+        <action input="/" name="LoanForm" parameter="method" path="/ApplyLoan" scope="session" type="com.action.LoanAction">
+            <forward name="success" path="/Loan/ApplyForLoan.jsp" />
+        </action>
+
+        <action input="/Loan/ViewAllLoanApplications.jsp" name="LoanForm" parameter="method" path="/LoanApproval" scope="session" type="com.action.LoanAction">
+            <forward name="success" path="/Loan/ViewAllLoanApplications.jsp"/>
+        </action>
+
+        <action input="/Loan/ViewAllLoanApplications.jsp" name="LoanForm" parameter="method" path="/LoanRejection" scope="session" type="com.action.LoanAction">
+            <forward name="success" path="/Loan/ViewAllLoanApplications.jsp"/>
+        </action>
+
+        <action input="/Loan/ViewAllLoanApplications.jsp" name="LoanForm" path="/EmployeeDetailsForLoan" scope="session" type="com.action.LoanAction" parameter="method">
+            <forward name="success" path="/Loan/EmployeeDetailsForLoan.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="LoanForm" path="/ShowLoanApplicationForm" scope="session" type="com.action.LoanAction" parameter="method">
+            <forward name="success" path="/Loan/ApplyForLoan.jsp" />
+        </action>
+
+        <action input="/Loan/ApplyForLoan.jsp" path="/GetSalaryForLoan" name="LoanForm" scope="session" type="com.action.LoanAction" parameter="method" >
+            <forward name="success" path="/AdvancedSalary/CalculateSalary.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="LoanForm" parameter="method" path="/ViewAllLoanApplicationDetails" scope="session" type="com.action.LoanAction">
+            <forward name="success" path="/Loan/ViewAllLoanApplications.jsp"/>
+        </action>
+
+        <action input="/AirTicket/AirTicketRequest.jsp" name="AirTicketRequestForm" parameter="method" path="/AirTicketRequest" scope="session" type="com.action.AirTicketRequestAction">
+            <forward name="success" path="/AirTicket/AirTicketRequest.jsp"/>
+        </action>
+        
+        <action input="/" name="AirTicketRequestForm" parameter="method" path="/ShowAirTicketForm" scope="session" type="com.action.AirTicketRequestAction">
+            <forward name="success" path="/AirTicket/AirTicketRequest.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="AirTicketRequestForm" path="/ViewAirTicketRequestDetails" scope="session" type="com.action.AirTicketRequestAction" parameter="method">
+            <forward name="success" path="/AirTicket/ViewAirTicketRequestDetails.jsp"/>
+        </action>
+
+        <action input="/AirTicket/ViewAirTicketRequestDetails.jsp" name="AirTicketRequestForm" path="/ApproveAirTicket" scope="session" type="com.action.AirTicketRequestAction" parameter="method">
+            <forward name="success" path="/AirTicket/ViewAirTicketRequestDetails.jsp"/>
+        </action>
+
+        <action input="/AirTicket/ViewAirTicketRequestDetails.jsp" name="AirTicketRequestForm" path="/RejectAirTicket" scope="session" type="com.action.AirTicketRequestAction" parameter="method">
+            <forward name="success" path="/AirTicket/ViewAirTicketRequestDetails.jsp"/>
+        </action>
+
+        <action input="/AirTicket/ViewAirTicketRequestDetails.jsp" name="AirTicketRequestForm" path="/EmployeeDetailsForAirTicket" scope="session" type="com.action.AirTicketRequestAction" parameter="method">
+            <forward name="success" path="/AirTicket/EmployeeDetails.jsp"/>
+        </action>
+
+        <action input="/" name="advancedSalaryRequestForm" parameter="method" path="/ShowAdvancedSalaryForm" scope="session" type="com.action.AdvancedSalaryRequestAction" validate="false">
+            <forward name="success" path="/AdvancedSalary/AdvancedSalaryRequest.jsp"/>
+        </action>
+        <action input="/AdvancedSalary/AdvancedSalaryRequest.jsp" name="advancedSalaryRequestForm" path="/salreq" scope="session" type="com.action.AdvancedSalaryRequestAction" parameter="method">
+            <forward name="success" path="/AdvancedSalary/AdvancedSalaryRequest.jsp"/>
+        </action>
+        <action input="/AdvancedSalary/AdvancedSalaryRequest.jsp" path="/GetSalary" name="advancedSalaryRequestForm" scope="session" type="com.action.AdvancedSalaryRequestAction" parameter="method" >
+            <forward name="success" path="/AdvancedSalary/CalculateSalary.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="advancedSalaryRequestForm" parameter="method" path="/ViewAdvancedSalarytRequest" scope="session" type="com.action.AdvancedSalaryRequestAction">
+            <forward name="success" path="/AdvancedSalary/ViewAdvancedSalRequestDetails.jsp"/>
+        </action>
+
+        <action input="/AdvancedSalary/ViewAdvancedSalRequestDetails.jsp" name="advancedSalaryRequestForm" parameter="method" path="/ViewAdvancedSalaryRequestDetails" scope="session" type="com.action.AdvancedSalaryRequestAction">
+            <forward name="success" path="/AdvancedSalary/ViewAdvancedSalRequestDetails.jsp"/>
+        </action>
+
+        <action input="/AdvancedSalary/ViewAdvancedSalRequestDetails.jsp" name="advancedSalaryRequestForm" path="/ApproveAdSalary" scope="session" type="com.action.AdvancedSalaryRequestAction" parameter="method">
+            <forward name="success" path="/AdvancedSalary/ViewAdvancedSalRequestDetails.jsp"/>
+        </action>
+
+        <action input="/AdvancedSalary/ViewAdvancedSalRequestDetails.jsp" name="advancedSalaryRequestForm" path="/RejectAdSalary" scope="session" type="com.action.AdvancedSalaryRequestAction" parameter="method">
+            <forward name="success" path="/AdvancedSalary/ViewAdvancedSalRequestDetails.jsp"/>
+        </action>
+
+        <action input="/AdvancedSalary/ViewAdvancedSalRequestDetails.jsp" name="advancedSalaryRequestForm" path="/EmployeeDetailsForAdvancedSalary" scope="session" type="com.action.AdvancedSalaryRequestAction" parameter="method">
+            <forward name="success" path="/AdvancedSalary/EmployeeDetailsForAdvancedSalary.jsp"/>
+        </action>
+
+        <action input="/" name="reimbursmentForm" parameter="method" path="/ShowTravelReimbursmentForm" scope="session" type="com.action.ReimbursmentAction">
+            <forward name="success" path="/Reimbursment/ApplyForReimbursment.jsp"/>
+        </action>
+        <action input="/Reimbursment/ApplyForReimbursment.jsp" name="reimbursmentForm" path="/TravelReimbursmentExpenses" scope="session" type="com.action.ReimbursmentAction" parameter="method">
+            <forward name="success" path="/Reimbursment/ApplyForReimbursment.jsp"/>
+        </action>
+        <action input="/" name="CompanyForm" parameter="method" path="/createcompany" scope="session" type="com.action.CompanyAction">
+            <forward name="success" path="/Company/CreateCompany.jsp"/>
+            <forward name="gpcomp" path="/Company/AddCompanyToGroup.jsp"/>
+        </action>
+        <action input="/" name="EmployeePersonalInfoForm" parameter="method" path="/LoadEmpCreation" scope="session" type="com.action.EmployeePersonalInfoAction">
+            <forward name="success"  path="/EmployeePersonalInfo/employeeCreation.jsp"/>
+            <forward name="failure"  path="/index.jsp"/>
+            <forward name="sessionOut"  path="/Login.jsp"/>
+        </action>
+
+        <action input="/" name="EmployeePersonalInfoForm" path="/createHr" scope="session" type="com.action.EmployeePersonalInfoAction" parameter="method"  >
+            <forward name="success"  path="/EmployeePersonalInfo/employeeCreation.jsp"/>
+            <forward name="failure"  path="/index.jsp"/>
+            <forward name="sessionOut"  path="/Login.jsp"/>
+        </action>
+
+        <action input="/" name="EmployeePersonalInfoForm" path="/addEmpSkillDetails" scope="session" type="com.action.EmployeePersonalInfoAction" parameter="method" >
+            <forward name="success" path="/EmployeePersonalInfo/addEmpSkillDetails.jsp"/>
+            <forward name="failure" path="/index.jsp"/>
+            <forward name="sessionOut"  path="/Login.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="AppraisalSetupForm" parameter="method" path="/appraisalSetupPage" scope="session" type="com.action.AppraisalSetupAction">
+            <forward name="success" path="/AppraisalAdmin/appraisalSetup.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="AppraisalSetupForm" parameter="method" path="/initiateAppraisal" scope="session" type="com.action.AppraisalSetupAction">
+            <forward name="success" path="/AppraisalAdmin/appraisalSetup.jsp"/>
+        </action>
+
+        <action input="/AppraisalAdmin/addCategory.jsp" name="AppraisalCategoryForm" parameter="method" path="/appraisalCategoryAction" scope="session" type="com.action.AppraisalCategoryAction" validate="false">
+            <forward name="success" path="/AppraisalAdmin/addCategory.jsp"/>
+        </action>
+
+         <action input="/AppraisalAdmin/addCategory.jsp" name="AppraisalCategoryForm" parameter="method" path="/addCategory" scope="session" type="com.action.AppraisalCategoryAction" validate="true">
+                <forward name="success" path="/AppraisalAdmin/addCategory.jsp"/>
+          </action>
+
+        <action input="/hrnet_admin/index.jsp" name="AppraisalQuestionForm" parameter="method" path="/questions" scope="session" type="com.action.AppraisalCategoryAction">
+            <forward name="success" path="/AppraisalAdmin/addQuestions.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="AppraisalQuestionForm" parameter="method" path="/addQuestions" scope="session" type="com.action.AppraisalQuestionAction">
+            <forward name="success" path="/AppraisalAdmin/addQuestions.jsp"/>
+        </action>
+        
+        <action input="/hrnet_admin/index.jsp" name="AppraisalProcessForm" parameter="method" path="/appraisalprocess1" scope="session" type="com.action.AppraisalProcessAction">
+            <forward name="success" path="/appraisal/appraisalForm.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="AppraisalResultForm" parameter="method" path="/appraise" scope="session" type="com.action.AppraisalProcessAction">
+            <forward name="success" path="/appraisal/appraisalForm.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="AppraisalResultForm" parameter="method" path="/getReport" scope="session" type="com.action.AppraisalProcessAction">
+            <forward name="success" path="/appraisal/appraisalReport.jsp"/>
+            <forward name="selfsuccess" path="/appraisal/appraisalReport.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="AppraisalResultForm" parameter="method" path="/getAttendanceReport" scope="session" type="com.action.AppraisalProcessAction">
+            <forward name="success" path="/appraisal/appraiseeAttendance.jsp"/>
+            <forward name="selfsuccess" path="/appraisal/appraiseeAttendance.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="LoginForm" parameter="method" path="/appraisalLogin" scope="session" type="com.action.AppraisalLoginAction">
+            <forward name="success" path="/appraisal/appraisalHome.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="AppraisalManageForm" parameter="method" path="/manageAppraisalPage" scope="session" type="com.action.AppraisalSetupAction">
+            <forward name="success" path="/AppraisalAdmin/manageAppraisal.jsp"/>
+        </action>
+        
+        <action input="/hrnet_admin/index.jsp" name="AppraisalSetupForm" parameter="method" path="/manageAppraisal" scope="session" type="com.action.AppraisalSetupAction">
+            <forward name="success" path="/AppraisalAdmin/manageAppraisal.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="LeaveForm" parameter="method" path="/ViewLeaveRequestDetails" scope="session" type="com.action.LeaveAction">
+            <forward name="success" path="/leave/ViewLeaveRequestDetails.jsp"/>
+        </action>
+
+        <action input="/leave/ViewLeaveRequestDetails.jsp" name="LeaveForm" parameter="method" path="/EmployeeDetailsForLeave" scope="session" type="com.action.LeaveAction">
+            <forward name="success" path="/leave/EmployeeDetailsForLeaveApplied.jsp"/>
+        </action>
+
+        <action input="/Leave/ViewLeaveRequestDetails.jsp" name="LeaveForm" parameter="method" path="/Approval" scope="session" type="com.action.LeaveAction">
+            <forward name="success" path="/Leave/ViewLeaveRequestDetails.jsp"/>
+        </action>
+
+        <action input="/Leave/ViewLeaveRequestDetails.jsp" name="LeaveForm" parameter="method" path="/Rejection" scope="session" type="com.action.LeaveAction">
+            <forward name="success" path="/Leave/ViewLeaveRequestDetails.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="reimbursmentForm" parameter="method" path="/ViewReimbursmentRequestDetails" scope="session" type="com.action.ReimbursmentAction">
+            <forward name="success" path="/Reimbursment/ViewAllAplicationsForReinbursment.jsp"/>
+        </action>
+
+        <action input="/Reimbursment/ViewAllAplicationsForReinbursment.jsp" name="reimbursmentForm" parameter="method" path="/ApproveReimbursment" scope="session" type="com.action.ReimbursmentAction">
+            <forward name="success" path="/Reimbursment/ViewAllAplicationsForReinbursment.jsp"/>
+        </action>
+
+        <action input="/Reimbursment/ViewAllAplicationsForReinbursment.jsp" name="reimbursmentForm" parameter="method" path="/RejectReimbursment" scope="session" type="com.action.ReimbursmentAction">
+            <forward name="success" path="/Reimbursment/ViewAllAplicationsForReinbursment.jsp"/>
+        </action>
+
+        <action input="/Reimbursment/ViewAllAplicationsForReinbursment.jsp" name="reimbursmentForm" path="/EmployeeDetailsForReimbursment" scope="session" type="com.action.ReimbursmentAction" parameter="method">
+            <forward name="success" path="/Reimbursment/EmployeeDetailsForReimbursment.jsp"/>
+        </action>
+
+        <action input="/hrnet_admin/index.jsp" name="SkillsForm" parameter="method" path="/empSkills" scope="session" type="com.action.SkillsModifyAction">
+            <forward name="success" path="/EmployeePersonalInfo/addEmpSkillDetails.jsp"/>
+        </action>
+        
+        <action input="/hrnet_admin/index.jsp" name="EmployeePersonalInfoForm" parameter="method" path="/viewEmpReport" scope="session" type="com.action.EmployeePersonalInfoAction">
+            <forward name="success" path="/EmployeePersonalInfo/EmployeeReport.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="VisaPassportForm" parameter="method" path="/viewPassportDetails" scope="session" type="com.action.VisaPassportDetails" validate="false">
+            <forward name="success" path="/VisaPassport/getPassportReport.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="VisaPassportForm" parameter="method" path="/viewVisaDetails" scope="session" type="com.action.VisaPassportDetails" validate="false">
+            <forward name="success" path="/VisaPassport/getVisaReport.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="AppraisalResultSumForm" parameter="method" path="/viewAppraisalResultSum" scope="session" type="com.action.AppraisalProcessAction" validate="false">
+            <forward name="success" path="/appraisal/AppraisalResultSummary.jsp"/>
+        </action>
+        <action input="/" name="RecruitmentForm" parameter="method" path="/addrecruit" scope="session" type="com.action.RecruitmentAction" validate="false">
+            <forward name="success" path="/Recruitment/ApplyRecruitment.jsp"/>
+            <forward name="getDetails" path="/Recruitment/DisplayCandidateDetails.jsp"/>
+            <forward name="finalize" path="/Recruitment/FinalizeRecruitment.jsp"/>
+        </action>
+        <action input="/" name="RecruitmentMarksForm" parameter="method" path="/addrecruitmarks" scope="session" type="com.action.RecruitmentAction" validate="false">
+            <forward name="success" path="/Recruitment/RecruitmentMarksEntry.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="RecruitmentForm" parameter="method" path="/recreport" scope="session" type="com.action.RecruitmentAction" validate="false">
+            <forward name="finalize" path="/Recruitment/FinalizeRecruitment.jsp"/>
+            <forward name="success" path="/Recruitment/FinalizeRecruitment.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="RecruitmentForm" parameter="method" path="/finalizeRecruitment" scope="session" type="com.action.RecruitmentAction" validate="false">
+            <forward name="success" path="/Recruitment/FinalizeRecruitment.jsp"/>
+            <forward name="finalize" path="/Recruitment/FinalizeRecruitment.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="RecruitmentForm" parameter="method" path="/recruitmentreport" scope="session" type="com.action.RecruitmentAction" validate="false">
+            <forward name="success" path="/Recruitment/RecruitedCandidateReport.jsp"/>
+        </action>
+
+        <action input="/" name="SalaryForm" parameter="method" path="/monthlyStatement" scope="session" type="com.action.SalaryAction" validate="false">
+            <forward name="success" path="/EmployeePersonalInfo/MonthlyStatement.jsp"/>
+        </action>
+        <action input="/EmployeePersonalInfo/MonthlyStatement.jsp" name="SalaryForm" parameter="method" path="/getAdvSal" scope="session" type="com.action.SalaryAction" validate="false">
+            <forward name="success" path="/EmployeePersonalInfo/CalcAdvSal.jsp"/>
+        </action>
+        <action input="/EmployeePersonalInfo/MonthlyStatement.jsp" name="SalaryForm" parameter="method" path="/getLeaveDed" scope="session" type="com.action.SalaryAction" validate="false">
+            <forward name="success" path="/EmployeePersonalInfo/CalLeaveDed.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="TimeSheetForm" parameter="method" path="/addTimesheet" scope="session" type="com.action.TimeSheetAction" validate="false">
+            <forward name="success" path="/ProjectManagement/TimesheetAdd.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="TimeSheetForm" parameter="method" path="/loadEmpTS" scope="session" type="com.action.TimeSheetAction" validate="false">
+            <forward name="success" path="/ProjectManagement/EmpTimesheet.jsp"/>
+        </action>
+        <action input="/ProjectManagement/EmpTimesheet.jsp" name="TimeSheetForm" parameter="method" path="/loadTaskDesc" scope="session" type="com.action.TimeSheetAction" validate="false">
+            <forward name="success" path="/ProjectManagement/taskDesc.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="TimeSheetForm" parameter="method" path="/viewTaskReport" scope="session" type="com.action.TimeSheetAction" validate="false">
+            <forward name="success" path="/ProjectManagement/TaskProgressReport.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="VisaRequestDetailsForm" parameter="method" path="/saveVisaRequest" scope="session" type="com.action.VisaRequestDetailsAction" validate="false">
+            <forward name="success" path="/VisaPassport/VisaRequestForm.jsp"/>
+            <forward name="report" path="/VisaPassport/VisaRequestReport.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="RecruitmentForm" parameter="method" path="/searchCandidate" scope="session" type="com.action.RecruitmentAction" validate="false">
+            <forward name="success" path="/Recruitment/SelectCandidate.jsp"/>
+        </action>
+        <action input="/" name="AttendanceForm" parameter="method" path="/getAttendance" scope="session" type="com.action.AttendanceAction" validate="false">
+            <forward name="success" path="/EmployeePersonalInfo/AttendanceReport.jsp"/>
+        </action>
+        <action input="/" name="KeyPositionForm" parameter="method" path="/succession" scope="session" type="com.action.SuccessionAction" validate="false">
+            <forward name="positionreport" path="/Succession/KeyPositions.jsp"/>
+            <forward name="emplist" path="/Succession/SuccessionPlanning.jsp"/>
+            <forward name="emplistsuccession" path="/Succession/SuccessionEmployeeReport.jsp"/>
+        </action>
+        <action input="/hrnet_admin/index.jsp" name="VacanciesForm" parameter="method" path="/getvacancy" scope="session" type="com.action.RecruitmentAction" validate="false">
+            <forward name="success" path="/Recruitment/DisplayVacancies.jsp"/>
+        </action>
+        <action input="/Company/CreateCompany.jsp" name="CompanyForm" parameter="method" path="/loadCity" scope="session" type="com.action.CompanyAction" validate="false">
+            <forward name="success" path="/Company/CityList.jsp"/>
+        </action>
+        <action input="/Company/AddBranches.jsp" name="BranchForm" parameter="method" path="/loadBranchCity" scope="session" type="com.action.CompanyAction" validate="false">
+            <forward name="success" path="/Company/CityListBranch.jsp"/>
+        </action>
+        <action input="/Company/AddBranches.jsp" name="BranchForm" parameter="method" path="/createBranch" scope="session" type="com.action.CompanyAction" validate="false">
+            <forward name="success" path="/Company/AddBranches.jsp"/>
+        </action>
+        <action input="/Company/AddDepartment.jsp" name="DepartmentForm" parameter="method" path="/loadCompany" scope="session" type="com.action.CompanyAction" validate="false">
+            <forward name="success" path="/Company/AddDepartment.jsp"/>
+        </action>
+        <action input="/Company/AddDepartment.jsp" name="DepartmentForm" parameter="method" path="/createDepartment" scope="session" type="com.action.CompanyAction" validate="false">
+            <forward name="success" path="/Company/AddDepartment.jsp"/>
+        </action>
+        <action input="/Company/AddJobType.jsp" name="JobTypeForm" parameter="method" path="/createJobType" scope="session" type="com.action.CompanyAction" validate="false">
+            <forward name="deptlist" path="/Company/DepartmentList.jsp"/>
+            <forward name="load" path="/Company/AddJobType.jsp"/>
+            <forward name="success" path="/Company/AddJobType.jsp"/>
+        </action>
+        <action input="/Company/BranchReport.jsp" name="BranchForm" parameter="method" path="/branchReport" scope="session" type="com.action.CompanyAction" validate="false">
+            <forward name="load" path="/Company/BranchReport.jsp"/>
+            <forward name="success" path="/Company/BranchReport.jsp"/>
+        </action>
+        <action input="/Company/DepartmentReport.jsp" name="DepartmentForm" parameter="method" path="/deptReport" scope="session" type="com.action.CompanyAction" validate="false">
+            <forward name="load" path="/Company/DepartmentReport.jsp"/>
+            <forward name="success" path="/Company/DepartmentReport.jsp"/>
+        </action>
+        <action input="/" name="ComplaintsForm" parameter="method" path="/submitComplaint" scope="session" type="com.action.ComplaintAction" validate="false">
+            <forward name="load" path="/SelfService/Complaints.jsp"/>
+            <forward name="success" path="/SelfService/Complaints.jsp"/>
+        </action>
+        <action input="/" name="TransportForm" parameter="method" path="/transportRequest" scope="session" type="com.action.TransportAction" validate="false">
+            <forward name="load" path="/SelfService/RequestForTransport.jsp"/>
+            <forward name="success" path="/SelfService/RequestForTransport.jsp"/>
+            <forward name="view" path="/SelfService/ViewTransportRequest.jsp"/>
+        </action>
+        <action input="/" name="EmployeeCertificationForm" parameter="method" path="/certification" scope="session" type="com.action.CertificationAction" validate="false">
+            <forward name="load" path="/SelfService/AddCertification.jsp"/>
+            <forward name="success" path="/SelfService/AddCertification.jsp"/>
+        </action>
+        <action input="/" name="ConferenceRoomBookingForm" parameter="method" path="/conferenceRoom" scope="session" type="com.action.ConferenceRoomBookingAction" validate="false">
+            <forward name="load" path="/SelfService/BookConferenceRoom.jsp"/>
+            <forward name="success" path="/SelfService/BookConferenceRoom.jsp"/>
+        </action>
+        <action input="/" name="RelatedDocumentForm" parameter="method" path="/requestDocuments" scope="session" type="com.action.RelatedDocumentAction" validate="false">
+            <forward name="load" path="/SelfService/RequestForDocuments.jsp"/>
+            <forward name="success" path="/SelfService/RequestForDocuments.jsp"/>
+            <forward name="view" path="/SelfService/ViewDocumentRequest.jsp"/>
+        </action>
+        <action input="/" name="FacilityRequestForm" parameter="method" path="/requestFacility" scope="session" type="com.action.FacilityRequisitionAction" validate="false">
+            <forward name="load" path="/SelfService/RequestForFacility.jsp"/>
+            <forward name="success" path="/SelfService/RequestForFacility.jsp"/>
+            <forward name="requestreport" path="/SelfService/ViewRequestStatus.jsp"/>
+            <forward name="view" path="/SelfService/ViewFacilityRequest.jsp"/>
+        </action>
+        <action input="/SelfService/ViewComplaints.jsp" name="ComplaintsForm" parameter="method" path="/viewComplains" scope="session" type="com.action.ComplaintAction" validate="false">
+            <forward name="load" path="/SelfService/ViewComplaints.jsp"/>
+            <forward name="success" path="/SelfService/ViewComplaints.jsp"/>
+        </action>
+        <action input="/" name="EmployeeInsuranceForm" parameter="method" path="/addInsurance" scope="session" type="com.action.EmployeeInsuranceAction" validate="false">
+            <forward name="success" path="/SelfService/AddInsuranceDetails.jsp"/>
+            <forward name="report" path="/SelfService/InsuranceReport.jsp"/>
+            <forward name="selfreport" path="/SelfService/SelfInsuranceDetails.jsp"/>
+        </action>
+        <action input="/" name="PhoneReimbursementForm" parameter="method" path="/phoneReimbursement" scope="session" type="com.action.PhoneReimbursement" validate="false">
+            <forward name="load" path="/SelfService/PhoneReimbursement.jsp"/>
+            <forward name="success" path="/SelfService/PhoneReimbursement.jsp"/>
+            <forward name="view" path="/SelfService/ViewPhoneReimbursement.jsp"/>
+            <forward name="approve" path="/SelfService/ViewPhoneReimbursement.jsp"/>
+        </action>
+        <action input="/" name="GoalSettingForm" parameter="method" path="/goalSetting" scope="request" type="com.action.GoalSettingAction" validate="false">
+            <forward name="load" path="/GoalSetting/SetGoalMilestone.jsp"/>
+            <forward name="success" path="/GoalSetting/SetGoalMilestone.jsp"/>
+        </action>
+        <action input="/GoalSetting/ApproveGoal.jsp" name="GoalSettingForm" parameter="method" path="/approveGoal" scope="request" type="com.action.GoalSettingAction" validate="false">
+            <forward name="load" path="/GoalSetting/ApproveGoal.jsp"/>
+        </action>
+        <action input="/GoalSetting/ModifyGoals.jsp" name="GoalSettingModifyForm" parameter="method" path="/modifyGoals" scope="request" type="com.action.GoalSettingAction" validate="false">
+            <forward name="load" path="/GoalSetting/ModifyGoals.jsp"/>
+            <forward name="success" path="/GoalSetting/ModifyGoals.jsp"/>
+            <forward name="report" path="/GoalSetting/GoalStatusReport.jsp"/>
+        </action>
+        <action input="/" name="ProjectJobsForm" parameter="method" path="/projectJob" scope="request" type="com.action.ManpowerAction" validate="false">
+            <forward name="load" path="/Manpower/CreateProjectJobs.jsp"/>
+            <forward name="success" path="/Manpower/CreateProjectJobs.jsp"/>
+        </action>
+        <action input="/Manpower/AllocateEmpOnJob.jsp" name="ProjectEmpForm" parameter="method" path="/projectEmp" scope="request" type="com.action.ManpowerAction" validate="false">
+            <forward name="load" path="/Manpower/AllocateEmpOnJob.jsp"/>
+            <forward name="joblist" path="/Manpower/JobList.jsp"/>
+            <forward name="jobdesc" path="/Manpower/JobDesc.jsp"/>
+            <forward name="success" path="/Manpower/AllocateEmpOnJob.jsp"/>
+        </action>
+        <action input="/Manpower/AddVacancies.jsp" name="VacanciesForm" parameter="method" path="/addVacancy" scope="request" type="com.action.ManpowerAction" validate="false">
+            <forward name="load" path="/Manpower/AddVacancies.jsp"/>
+            <forward name="success" path="/Manpower/AddVacancies.jsp"/>
+        </action>
+        <action input="/Manpower/RelocateEmployee.jsp" name="ProjectEmpForm" parameter="method" path="/relocateEmployee" scope="request" type="com.action.ManpowerAction" validate="false">
+            <forward name="load" path="/Manpower/RelocateEmployee.jsp"/>
+            <forward name="empdet" path="/Manpower/EmpProjDesc.jsp"/>
+            <forward name="success" path="/Manpower/RelocateEmployee.jsp"/>
+            <forward name="report" path="/Manpower/newjsp.jsp"/>
+        </action>
+        <action input="/Manpower/JobTransferReport.jsp" parameter="/Manpower/JobTransferReport.jsp" name="ProjectEmpForm" path="/loadReport" scope="session" type="org.apache.struts.actions.ForwardAction" validate="false"/>
+            
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        
+    </action-mappings>
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>
+
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

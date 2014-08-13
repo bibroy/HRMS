@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.CompensationIncrementBand" schema="HRMS" table="COMPENSATION_INCREMENT_BAND">
+    <id name="id" type="java.lang.Integer">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="company" type="java.lang.Integer">
+      <column length="20" name="COMPANYID"/>
+    </property>
+    <property name="department" type="java.lang.Integer">
+      <column length="20" name="DEPARTMENTID"/>
+    </property>
+    <property name="designation" type="java.lang.Integer">
+      <column length="20" name="DESIGNATIONID"/>
+    </property>
+    <property name="increment" type="java.lang.Integer">
+      <column length="20" name="INCREMENT_SALARY"/>
+    </property>
+    <property name="from" type="java.lang.Integer">
+      <column length="20" name="SCORE_FROM"/>
+    </property>
+    <property name="to" type="java.lang.Integer">
+      <column length="20" name="SCORE_TO"/>
+    </property>
+    <property name="incrementdatefrom" type="date">
+      <column length="20" name="INCREMENT_DATE_FROM"/>
+    </property>
+    <property name="incrementdateto" type="date">
+      <column length="20" name="INCREMENT_DATE_TO"/>
+    </property>
+    <property name="status" type="string">
+      <column length="20" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

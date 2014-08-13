@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.ClientGroup" table="CLIENT_GROUP">
+    <id column="gr_master_id" name="grId" type="integer">
+      <generator class="increment"/>
+    </id>
+    <property column="gr_code" name="grCode" type="string"/>
+    <property column="gr_description" name="grDescription" type="string"/>
+    <property column="gr_name" name="grName" type="string"/>
+    <property column="gr_status" name="grStatus" type="string"/>
+  </class>
+</hibernate-mapping>

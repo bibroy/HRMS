@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.pojo.TrainingTransation" table="training_request_master">
+    <id column="request_id" name="requestId">
+      <generator class="increment"/>
+    </id>
+    <property column="training_id" generated="never" lazy="false" name="trainingId" optimistic-lock="true" unique="false"/>
+    <property column="employee_apply_id" generated="never" lazy="false" name="employeeApplyId" optimistic-lock="true" unique="false"/>
+    <property column="employee_approve_id" generated="never" lazy="false" name="employeeApproveId" optimistic-lock="true" unique="false"/>
+    <!-- <property column="trainer" generated="never" lazy="false" name="traineer" optimistic-lock="true" unique="false"/> -->
+    <property column="from_date" generated="never" lazy="false" name="fromDate" optimistic-lock="true" unique="false"/>
+    <property column="to_date" generated="never" lazy="false" name="toDate" optimistic-lock="true" unique="false"/>
+    <property column="status" generated="never" lazy="false" name="status" optimistic-lock="true" unique="false"/>
+    <!--
+    <property column="id" generated="never" lazy="false" name="id" optimistic-lock="true" unique="false" type="integer"/>
+    -->
+    <!-- add for joining -->
+    <!--<many-to-one column="id" name="dept" class="com.pojo.Department" insert="false" update="false" lazy="false"/>-->
+    <bag cascade="all-delete-orphan" inverse="true" lazy="false" name="trainingRequestEmployee" table="training_request_employee">
+      <key column="request_id" foreign-key="true" not-null="true" update="true"/>
+      <one-to-many class="com.pojo.TrainingRequestEmployee"/>
+    </bag>
+    <many-to-one cascade="refresh" class="com.pojo.Training" column="training_Id" insert="false" lazy="false" name="training" update="false"/>
+    <!--many-to-one class="com.pojo.EmployeeMaster" column="employee_apply_id" insert="false" lazy="false" name="employee" update="false" cascade="refresh"/-->
+    <!-- add for joining -->
+  </class>
+</hibernate-mapping>

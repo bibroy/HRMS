@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.Manualattendence" schema="HRMS" table="MANUALATTENDENCE">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="totalworkingDay" type="big_decimal">
+      <column name="TOTALWORKING_DAY" precision="22" scale="0"/>
+    </property>
+    <property name="absentDay" type="big_decimal">
+      <column name="ABSENT_DAY" precision="22" scale="0"/>
+    </property>
+    <property name="entrydate" type="date">
+      <column length="7" name="ENTRYDATE"/>
+    </property>
+    <property name="modifyby" type="big_decimal">
+      <column name="MODIFYBY" precision="22" scale="0"/>
+    </property>
+    <property name="createdby" type="big_decimal">
+      <column name="CREATEDBY" precision="22" scale="0"/>
+    </property>
+    <property name="modifydate" type="date">
+      <column length="7" name="MODIFYDATE"/>
+    </property>
+    <property name="employeeId" type="string">
+      <column length="19" name="EMPLOYEE_ID"/>
+    </property>
+    <property name="companyid" type="big_decimal">
+      <column name="COMPANYID" precision="22" scale="0"/>
+    </property>
+    <property name="day" type="string">
+      <column length="10" name="DAY"/>
+    </property>
+    <property name="month" type="string">
+      <column length="10" name="MONTH"/>
+    </property>
+    <property name="year" type="string">
+      <column length="10" name="YEAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

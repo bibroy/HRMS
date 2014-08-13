@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="TimesheetMappingForm" type="com.forms.TimesheetMappingForm"/>
+        <form-bean name="AddcompensationIndicatorMasterForm" type="com.forms.AddcompensationIndicatorMasterForm"/>
+        <form-bean name="CompensationPerformanceSheetForm" type="com.forms.CompensationPerformanceSheetForm"/>
+        <form-bean name="performanceSetupForm" type="com.forms.performanceSetupForm"/>
+        <form-bean name="compensationForm" type="com.forms.compensationForm"/>
+        <form-bean name="TimesheetDetailForm" type="com.forms.TimesheetDetailForm"/>
+        <form-bean name="TimeSheetHeaderForm" type="com.forms.TimeSheetHeaderForm"/>
+        <form-bean name="AssessmentEventForm" type="com.forms.AssessmentEventForm"/>
+        <form-bean name="AgenciesForm" type="com.forms.AgenciesForm"/>
+        <form-bean name="recruitmentRrequest" type="com.forms.recruitmentRrequest"/>
+        <form-bean name="employeeDetailForm" type="com.forms.employeeDetailForm"/>
+        <form-bean name="AppraisalResultForm" type="com.forms.AppraisalResultForm"/>
+        <form-bean name="AppraisalProcessForm" type="com.forms.AppraisalProcessForm"/>
+        <form-bean name="AppraisalQuestionForm" type="com.forms.AppraisalQuestionForm"/>
+        <form-bean name="AppraisalCategoryForm" type="com.forms.AppraisalCategoryForm"/>
+        <form-bean name="AppraisalSetupForm" type="com.forms.AppraisalSetupForm"/>
+        <form-bean name="AppraisalResultSumForm" type="com.forms.AppraisalResultSumForm"/>
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action input="/" name="recruitmentRrequest" parameter="method" path="/recruitmentRrequest" scope="session" type="com.action.recruitmentrequestAction">
+            <forward name="success" path="/Recruitment/recruitmentRequest.jsp"/>
+        </action>
+        <action input="/" name="recruitmentRrequest" parameter="method" path="/recruitmentRrequest1" scope="session" type="com.action.recruitmentrequestAction">
+            <forward name="success" path="/Recruitment/requestview.jsp"/>
+        </action>
+        <action input="/" name="AgenciesForm" parameter="method" path="/Agencies" scope="session" type="com.action.AgenciesAction" validate="false">
+            <forward name="success" path="/Recruitment/AddAgencies.jsp"/>
+            <forward name="edit" path="/Recruitment/showForEdit.jsp"/>
+        </action>
+        <action input="Recruitment/showForEdit.jsp" name="AgenciesForm"  parameter="method" path="/Agencies2" scope="session" type="com.action.AgenciesAction" validate="false">
+            <forward name="edit" path="/Recruitment/showForEdit.jsp"/>
+        </action>
+        <action input="/" name="AgenciesForm" parameter="method" path="/Agencies1" scope="session" type="com.action.AgenciesAction" validate="false">
+            <forward name="success" path="/Recruitment/viewAgencies.jsp"/>
+        </action>
+        <action input="/" name="RecruitmentForm" parameter="method" path="/sendingMailAction" scope="session" type="com.action.RecruitmentAction" validate="false">
+            <forward name="success" path="/Recruitment/SendingMail.jsp"/>
+        </action>
+        <action input="/" name="AssessmentEventForm" parameter="method" path="/assessment" scope="session" type="com.action.AssessmentEventAction" validate="false">
+            <forward name="success" path="/Recruitment/AssessmentEventSchedule.jsp"/>
+        </action>
+        <action input="/" name="TimeSheetHeaderForm" parameter="method" path="/timesheet" scope="session" type="com.action.TimeSheetAction" validate="false">
+            <forward name="success" path="/TimeSheet/Timesheetheader.jsp"/>
+            <forward name="deptlist" path="/TimeSheet/DepartmentList.jsp"/>
+            
+        </action>
+        <action input="/TimeSheet/TimesheetDetail.jsp" name="TimesheetDetailForm" parameter="method" path="/timesheet1" scope="session" type="com.action.TimeSheetAction" validate="true">
+            <forward name="normal" path="/TimeSheet/TimesheetDetail.jsp"/>
+            <forward name="save" path="/TimeSheet/TimesheetDetail.jsp"/>
+        </action>
+        <action input="/TimeSheet/TimesheetDetail.jsp" name="TimesheetDetailForm" parameter="method" path="/timesheet2" scope="session" type="com.action.TimeSheetAction" validate="true">
+            <forward name="success" path="/TimeSheet/TimesheetApprove.jsp"/>
+            <forward name="finalize" path="/TimeSheet/TimesheetApprove.jsp"/>
+            <forward name="approve" path="/TimeSheet/TimesheetApprove.jsp"/>
+            <forward name="disapprove" path="/TimeSheet/DisapproveTimesheet.jsp"/>
+            <forward name="dsave" path="/TimeSheet/DisapproveTimesheet.jsp"/>
+        </action>
+        <action input="/" name="AppraisalResultForm" parameter="method" path="/appraise1" scope="session" type="com.action.AppraisalProcessAction">
+            <forward name="save" path="/appraisal/submitAppraisalform.jsp"/>
+        </action>
+        <action input="/" name="AppraisalProcessForm" parameter="method" path="/selfappraisal" scope="session" type="com.action.AppraisalProcessAction">
+            <forward name="success" path="/appraisal/selfAppraisalForm.jsp"/>
+        </action>
+        <action input="/" name="AppraisalResultForm" parameter="method" path="/selfappraise" scope="session" type="com.action.AppraisalProcessAction">
+            <forward name="save" path="/appraisal/submitSelfAppraisalform.jsp"/>
+        </action>
+        <action input="/" name="AppraisalResultForm" parameter="method" path="/appraisalcalculation" scope="session" type="com.action.AppraisalProcessAction">
+            <forward name="save" path="/appraisal/submitAppraisalform.jsp"/>
+            <forward name="selfsave" path="/appraisal/submitSelfAppraisalform.jsp"/>
+        </action>
+
+        <action input="/" name="compensationForm" parameter="method" path="/Compensation" scope="session" type="com.action.CompensationAction" validate="false">
+            <forward name="success" path="/Compensation/AddIncrementBands.jsp"/>
+            <forward name="deptlist" path="/Compensation/Departmentlist.jsp"/>
+            
+            <forward name="company" path="/Compensation/AddIncrementBands.jsp"/>
+        </action>
+        <action input="/" name="performanceSetupForm" parameter="method" path="/performance" scope="session" type="com.action.CompensationAction" validate="false">
+            <forward name="success" path="/Compensation/PerformanceIndicatorSetup.jsp"/>
+            <forward name="deptlist" path="/Compensation/Departmentlist.jsp"/>
+            <forward name="company" path="/Compensation/PerformanceIndicatorSetup.jsp"/>
+        </action>
+        <action input="/" name="CompensationPerformanceSheetForm" parameter="method" path="/performancesheet" scope="session" type="com.action.CompensationAction" validate="false">
+            <forward name="success" path="/Compensation/calculatescore.jsp"/>
+            <forward name="cpi" path="/Compensation/PerformanceSheet.jsp"/>
+            <forward name="app" path="/appraisal/appraisalReport.jsp"/>
+            <forward name="time" path="/Compensation/CompensationTimesheetReport.jsp"/>
+            <forward name="finalize" path="/Compensation/CompensationTimesheetReport.jsp"/>
+            <forward name="calculation" path="/Compensation/calculatescore.jsp"/>
+        </action>
+        <action input="/" name="compensationForm" parameter="method" path="/incrementband" scope="session" type="com.action.CompensationAction" validate="false">
+            <forward name="indicatorband" path="/Compensation/StartIncrementCycle.jsp"/>
+            <forward name="approve" path="/Compensation/StartIncrementCycle.jsp"/>
+        </action>
+        <action input="/" name="AddcompensationIndicatorMasterForm" parameter="method" path="/Addindicator" scope="session" type="com.action.CompensationAction" validate="false">
+            <forward name="success" path="/Compensation/AddIndicator.jsp"/>
+            <forward name="forward" path="/Compensation/AddIndicator.jsp"/>
+
+        </action>
+        <action input="/" name="compensationForm" parameter="method" path="/viewtarget" scope="session" type="com.action.CompensationAction" validate="false">
+            <forward name="finalize" path="/Compensation/viewPayperformanrceTarget.jsp"/>
+
+
+        </action>
+        <action input="/Recruitment/RecruitmentMarksEntry.jsp" name="FacilityRequestForm" parameter="/Recruitment/RecruitmentMarksEntry.jsp" path="/marksentry" scope="session" type="org.apache.struts.actions.ForwardAction" validate="false"/>
+        <action input="/Recruitment/EditAgencies.jsp" name="AgenciesForm" parameter="/Recruitment/EditAgencies.jsp" path="/editagen" scope="session" type="org.apache.struts.actions.ForwardAction"/>
+        <action input="/Recruitment/DisplayCandidateDetails.jsp" name="FacilityRequestForm" parameter="/Recruitment/DisplayCandidateDetails.jsp" path="/candidatedetail" scope="session" type="org.apache.struts.actions.ForwardAction" validate="false"/>
+        <action input="/Recruitment/AssessmentEventSchedule.jsp" name="FacilityRequestForm" parameter="/Recruitment/AssessmentEventSchedule.jsp" path="/addassess" scope="session" type="org.apache.struts.actions.ForwardAction" validate="false"/>
+        <action input="/Recruitment/ApplyRecruitment.jsp" name="FacilityRequestForm" parameter="/Recruitment/ApplyRecruitment.jsp" path="/applyrecruitment" scope="session" type="org.apache.struts.actions.ForwardAction" validate="false"/>
+        <action input="/Recruitment/AddAgencies.jsp" name="FacilityRequestForm" parameter="/Recruitment/AddAgencies.jsp" path="/addagencies" scope="session" type="org.apache.struts.actions.ForwardAction" validate="false"/>
+
+
+        <action input="/" name="TimesheetMappingForm" parameter="method" path="/timesheetmapping" scope="session" type="com.action.TimeSheetAction" validate="false">
+            <forward name="mapheader" path="/TimeSheet/TimeSheetMapping.jsp"/>
+            <forward name="header" path="/TimeSheet/TimeSheetMapping.jsp"/>
+            <forward name="save" path="/TimeSheet/TimeSheetMapping.jsp"/>
+        </action>
+       <action input="/" name="AppraisalResultSumForm" parameter="method" path="/appraisalpiechart" scope="session" type="com.action.AppraisalProcessAction">
+              <forward name="report" path="/appraisal/piejasper.jsp"/>
+              <forward name="appsumemployee" path="/appraisal/AppraisalStatistics.jsp"/>
+           </action>
+        <action input="/Compensation/PerformanceSheet.jsp" name="CompensationPerformanceSheetForm" parameter="/Compensation/PerformanceSheet.jsp" path="/performanceSheet" scope="session" type="org.apache.struts.actions.ForwardAction" validate="false"/>
+       
+
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

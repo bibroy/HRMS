@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.TrainingRequestMaster" schema="HRMS" table="TRAINING_REQUEST_MASTER">
+    <id name="requestId" type="big_decimal">
+      <column name="REQUEST_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="trainingId" type="big_decimal">
+      <column name="TRAINING_ID" precision="22" scale="0"/>
+    </property>
+    <property name="fromDate" type="date">
+      <column length="7" name="FROM_DATE"/>
+    </property>
+    <property name="toDate" type="date">
+      <column length="7" name="TO_DATE"/>
+    </property>
+    <property name="status" type="string">
+      <column length="10" name="STATUS"/>
+    </property>
+    <property name="employeeApplyId" type="big_decimal">
+      <column name="EMPLOYEE_APPLY_ID" precision="22" scale="0"/>
+    </property>
+    <property name="employeeApproveId" type="big_decimal">
+      <column name="EMPLOYEE_APPROVE_ID" precision="22" scale="0"/>
+    </property>
+    <many-to-one class="com.pojo.TrainingMaster" column="TRAINING_ID" insert="false" name="training" update="false" fetch="select"/>
+  </class>
+</hibernate-mapping>

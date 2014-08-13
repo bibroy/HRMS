@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.EmployeeInsurance" schema="HRMS" table="EMPLOYEE_INSURANCE">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeId" type="string">
+      <column length="20" name="EMPLOYEE_ID"/>
+    </property>
+    <property name="insuranceNo" type="string">
+      <column name="INSURANCE_NO" length="20"/>
+    </property>
+    <property name="insuranceProvider" type="string">
+      <column length="50" name="INSURANCE_PROVIDER"/>
+    </property>
+    <property name="premiumAmount" type="big_decimal">
+      <column precision="22" scale="2" name="PREMIUM_AMOUNT"/>
+    </property>
+    <property name="premiumDate" type="date">
+      <column length="15" name="PREMIUM_DATE"/>
+    </property>
+    <property name="insuredAmount" type="big_decimal">
+      <column precision="22" scale="2" name="INSURED_AMOUNT"/>
+    </property>
+    <property name="maturityDate" type="date">
+        <column length="15" name="MATURITY_DATE"/>
+    </property>
+  </class>
+</hibernate-mapping>

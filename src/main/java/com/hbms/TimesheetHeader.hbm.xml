@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.TimesheetHeader" schema="HRMS" table="TIMESHEET_HEADER">
+    <id name="headerid" type="big_decimal">
+      <column name="HEADERID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="workingdate" type="date">
+      <column length="7" name="WORKINGDATE"/>
+    </property>
+    <property name="creationdate" type="date">
+      <column length="7" name="CREATIONDATE"/>
+    </property>
+    <property name="normalworkduration" type="big_decimal">
+      <column name="NORMALWORKDURATION" precision="22" scale="0"/>
+    </property>
+    <property name="overtimeduration" type="big_decimal">
+      <column name="OVERTIMEDURATION" precision="22" scale="0"/>
+    </property>
+    <property name="deptid" type="big_decimal">
+      <column name="DEPTID" precision="22" scale="0"/>
+    </property>
+    <property name="empid" type="big_decimal">
+      <column name="EMPID" precision="22" scale="0"/>
+    </property>
+    <property name="companyid" type="big_decimal">
+      <column name="COMPANYID" precision="22" scale="0"/>
+    </property>
+    <property name="overtimeprojectid" type="big_decimal">
+      <column name="OVERTIMEPROJECTID" precision="22" scale="0"/>
+    </property>
+    <property name="creatorid" type="string">
+      <column name="CREATORID" precision="22" scale="0"/>
+    </property>
+    <property name="starttime" type="string">
+      <column length="10" name="STARTTIME"/>
+    </property>
+    <property name="overtimeslot" type="string">
+      <column length="10" name="OVERTIMESLOT"/>
+    </property>
+    <property name="otdescription" type="string">
+      <column length="10" name="OTDESCRIPTION"/>
+    </property>
+  </class>
+</hibernate-mapping>

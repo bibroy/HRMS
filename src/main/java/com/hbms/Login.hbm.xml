@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.Login" schema="HRMS" table="LOGIN">
+    <id name="userId" type="string">
+      <column length="15" name="USER_ID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="password" type="string">
+      <column length="15" name="PASSWORD"/>
+    </property>
+    <property name="lastLogin" type="string">
+      <column name="LAST_LOGIN"/>
+    </property>
+    <property name="role" type="string">
+      <column length="10" name="ROLE"/>
+    </property>
+    <property name="roleName" type="string">
+      <column length="20" name="ROLE_NAME"/>
+    </property>
+  </class>
+</hibernate-mapping>

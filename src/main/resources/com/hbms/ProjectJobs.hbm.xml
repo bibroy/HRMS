@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.pojo.ProjectJobs" schema="HRMS" table="PROJECT_JOBS">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.pojo.Project" fetch="select" name="project" >
+            <column name="PROJ_ID" precision="22" scale="0"/>
+        </many-to-one>
+        <property name="jobName" type="string">
+            <column name="JOB_NAME" length="40"/>
+        </property>
+        <property name="jobDesc" type="string">
+            <column name="JOB_DESC" length="100"/>
+        </property>
+        <property name="skillsReq" type="string">
+            <column name="SKILLS_REQ" length="100"/>
+        </property>
+        <property name="manpowerReq" type="java.lang.Integer">
+            <column name="MANPOWER_REQ" precision="15" scale="0"/>
+        </property>
+        <property name="allocatedManpower" type="java.lang.Integer">
+            <column name="ALLOCATED_MANPOWER" precision="15" scale="0"/>
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

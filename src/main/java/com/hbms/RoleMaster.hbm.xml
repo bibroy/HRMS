@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.RoleMaster" schema="HRMS" table="ROLE_MASTER">
+    <id name="roleId" type="big_decimal">
+      <column name="ROLE_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="roleName" type="string">
+      <column length="15" name="ROLE_NAME"/>
+    </property>
+    <property name="roleDescription" type="string">
+      <column length="35" name="ROLE_DESCRIPTION"/>
+    </property>
+    <property name="rolePriority" type="big_decimal">
+      <column name="ROLE_PRIORITY" precision="22" scale="0"/>
+    </property>
+    <set inverse="true" name="designationMasters">
+      <key>
+        <column name="ROLE_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="com.pojo.DesignationMaster"/>
+    </set>
+  </class>
+</hibernate-mapping>

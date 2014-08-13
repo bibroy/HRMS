@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.CompensationPerformancesheet" schema="HRMS" table="COMPENSATION_PERFORMANCE_SHEET">
+    <id name="id" type="java.lang.Integer">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="empid" type="string">
+      <column length="20" name="EMPID"/>
+    </property>
+    <property name="totalmeasure" type="java.lang.Integer">
+      <column length="20" name="TOTAL_SCORE"/>
+    </property>
+    <property name="obtainmeasure" type="java.lang.Integer">
+      <column length="20" name="OBTAIN_SCORE"/>
+    </property>
+    <property name="indicatorid" type="java.lang.Integer">
+      <column length="20" name="INDICATOR_ID"/>
+    </property>
+    <property name="performancedate" type="date">
+      <column length="20" name="PERFORMANCE_DATE"/>
+    </property>
+  </class>
+</hibernate-mapping>

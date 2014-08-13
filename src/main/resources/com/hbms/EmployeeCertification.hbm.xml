@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.EmployeeCertification" schema="HRMS" table="EMPLOYEE_CERTIFICATION">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeId" type="string">
+      <column length="15" name="EMPLOYEE_ID"/>
+    </property>
+    <property name="certificationName" type="string">
+      <column length="50" name="CERTIFICATION_NAME"/>
+    </property>
+    <property name="orgatizationName" type="string">
+      <column length="100" name="ORGATIZATION_NAME"/>
+    </property>
+    <property name="subject" type="string">
+      <column length="100" name="SUBJECT"/>
+    </property>
+    <property name="certifiedOnDate" type="date">
+      <column length="7" name="CERTIFIED_ON_DATE"/>
+    </property>
+    <property name="renewedDate" type="date">
+      <column length="7" name="RENEWED_DATE"/>
+    </property>
+    <property name="renewedOnDate" type="date">
+      <column length="7" name="RENEWED_ON_DATE"/>
+    </property>
+  </class>
+</hibernate-mapping>

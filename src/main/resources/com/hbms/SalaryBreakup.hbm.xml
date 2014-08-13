@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.SalaryBreakup" schema="HRMS" table="SALARY_BREAKUP">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeid" type="string">
+      <column length="20" name="EMPLOYEE_ID"/>
+    </property>
+    <property name="headergpid" type="string">
+      <column length="30" name="HEADERGPID"/>
+    </property>
+    <property name="amount" type="java.lang.Double">
+      <column length="30" name="amount"/>
+    </property>
+    <property name="netpayable" type="java.lang.Double">
+      <column name="NETPAYABLE" precision="15" scale="2"/>
+    </property>
+  </class>
+</hibernate-mapping>

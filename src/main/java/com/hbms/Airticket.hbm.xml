@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 16, 2010 4:51:28 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.Airticket" schema="HRMS" table="AIRTICKET">
+    <id name="requestid" type="big_decimal">
+      <column name="REQUESTID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeCode" type="string">
+      <column length="15" name="EMPLOYEE_CODE"/>
+    </property>
+    <property name="airlineName" type="string">
+      <column name="AIRLINE_NAME"/>
+    </property>
+    <property name="destination" type="string">
+      <column name="DESTINATION"/>
+    </property>
+    <property name="purposeOdTrip" type="string">
+      <column name="PURPOSE_OD_TRIP"/>
+    </property>
+    <property name="departureDate" type="date">
+      <column length="7" name="DEPARTURE_DATE"/>
+    </property>
+    <property name="approvalstatus" type="string">
+      <column name="APPROVALSTATUS"/>
+    </property>
+    <property name="returndate" type="date">
+      <column length="7" name="RETURNDATE"/>
+    </property>
+    <property name="approvalauthoriyEmployeeid" type="string">
+      <column length="15" name="APPROVALAUTHORIY_EMPLOYEEID"/>
+    </property>
+    <property name="requestdate" type="date">
+      <column length="7" name="REQUESTDATE"/>
+    </property>
+    <property name="approvaldate" type="date">
+      <column length="7" name="APPROVALDATE"/>
+    </property>
+    <property name="travelFrom" type="string">
+      <column length="30" name="TRAVEL_FROM"/>
+    </property>
+    <property name="departureTime" type="string">
+      <column length="30" name="DEPARTURE_TIME"/>
+    </property>
+    <property name="returnTime" type="string">
+      <column length="30" name="RETURN_TIME"/>
+    </property>
+    <property name="includeHotel" type="string">
+      <column length="30" name="INCLUDE_HOTEL"/>
+    </property>
+    <property name="includeCar" type="string">
+      <column length="30" name="INCLUDE_CAR"/>
+    </property>
+    <property name="nonSmokingRoom" type="string">
+      <column length="30" name="NON_SMOKING_ROOM"/>
+    </property>
+    <property name="tripClass" type="string">
+      <column length="30" name="TRIP_CLASS"/>
+    </property>
+    <property name="carClass" type="string">
+      <column length="30" name="CAR_CLASS"/>
+    </property>
+    <property name="seatLocation" type="string">
+      <column length="30" name="SEAT_LOCATION"/>
+    </property>
+  </class>
+</hibernate-mapping>

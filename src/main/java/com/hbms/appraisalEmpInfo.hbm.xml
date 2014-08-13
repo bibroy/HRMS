@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.pojo.AppraisalEmpInfo" table="employee_master">
+    <id column="ID" name="id"/>
+    <property column="EMPLOYEE_ID" name="employee_id"/>
+    <property formula="(select concat(concat(concat(e.first_name,&apos;  &apos;),concat(e.middle_name,&apos;  &apos;)),e.last_name) from employee_master e where e.employee_id=employee_id)" name="employee_name"/>
+    <property formula="(select e.gender from employee_master e where e.employee_id=employee_id)" name="gender"/>
+    <property formula="(select c.company_code from employee_master e,branch_master b,company_master c  where e.branch_id=b.branch_id and b.COMPANY_ID=c.company_code and e.employee_id=employee_id)" name="company_code"/>
+    <property formula="(select c.company_name from employee_master e,branch_master b,company_master c  where e.branch_id=b.branch_id and b.COMPANY_ID=c.company_code and e.employee_id=employee_id)" name="company"/>
+    <property formula="(select d.department_id from department_master d,employee_master e where d.department_id=e.department_id and  e.employee_id=employee_id)" name="department_id"/>
+    <property formula="(select d.department_name from department_master d,employee_master e where d.department_id=e.department_id and  e.employee_id=employee_id)" name="department"/>
+    <property formula="(select d.designation_id from designation_master d,employee_master e where d.designation_id=e.designation_id and  e.employee_id=employee_id)" name="designation_id"/>
+    <property formula="(select d.designation_name from designation_master d,employee_master e where d.designation_id=e.designation_id and  e.employee_id=employee_id)" name="designation"/>
+    <property formula="(select trunc((((86400*(sysdate - e.date_of_join)/60)/60)/24)) from employee_master e where  e.employee_id=employee_id)" name="days_of_experience"/>
+  </class>
+</hibernate-mapping>

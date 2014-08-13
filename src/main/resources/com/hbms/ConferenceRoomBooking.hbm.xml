@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.ConferenceRoomBooking" schema="HRMS" table="CONFERENCE_ROOM_BOOKING">
+    <id name="conferenceroombookingcode" type="big_decimal">
+      <column name="CRBCODE" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeid" type="string">
+      <column length="15" name="EMPLOYEEID"/>
+    </property>
+    <property name="roomno" type="string">
+      <column name="ROOMNO"/>
+    </property>
+    <property name="fromtime" type="timestamp">
+      <column name="FROMTIME"/>
+    </property>
+    <property name="totime" type="timestamp">
+      <column name="TOTIME"/>
+    </property>
+    <property name="reason" type="string">
+      <column length="100" name="REASON"/>
+    </property>
+    <property name="status" type="string">
+      <column name="STATUS"/>
+    </property>
+    <property name="approvalauthorityEmployeeid" type="string">
+      <column length="15" name="APPROVALAUTORITYID"/>
+    </property>
+    <property name="requestdate" type="date">
+      <column length="7" name="REQUESTDATE"/>
+    </property>
+    <property name="approvaldate" type="date">
+      <column length="7" name="APPROVALDATE"/>
+    </property>
+  </class>
+</hibernate-mapping>

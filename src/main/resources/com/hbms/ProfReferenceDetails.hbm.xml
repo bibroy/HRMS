@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.ProfReferenceDetails" schema="HRMS" table="PROF_REFERENCE_DETAILS">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeId" type="string">
+      <column length="15" name="EMPLOYEE_ID"/>
+    </property>
+    <property name="referenceName" type="string">
+      <column length="100" name="REFERENCE_NAME"/>
+    </property>
+    <property name="referralOrganizationName" type="string">
+      <column length="100" name="REFERRAL_ORGANIZATION_NAME"/>
+    </property>
+    <property name="refContactNo" type="string">
+      <column length="20" name="REF_CONTACT_NO"/>
+    </property>
+    <property name="refEmailAddress" type="string">
+      <column length="15" name="REF_EMAIL_ADDRESS"/>
+    </property>
+    <property name="refDesignation" type="string">
+      <column length="15" name="REF_DESIGNATION"/>
+    </property>
+    <property name="refRelaltion" type="string">
+      <column length="25" name="REF_RELALTION"/>
+    </property>
+  </class>
+</hibernate-mapping>

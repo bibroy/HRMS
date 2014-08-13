@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.WorkShift" schema="HRMS" table="EMPLOYEE_WORKSHIFT">
+    <id name="employeeID" type="string">
+      <column length="20" name="EMPLOYEE_ID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="shiftID" type="java.lang.Integer">
+      <column name="SHIFT_ID"/>
+    </property>
+    <property name="allocatedBY" type="string">
+      <column length="20" name="ALLOCATEDBY"/>
+    </property>
+    <property name="workStartDate" type="date">
+      <column length="20" name="WORKSTARTDATE"/>
+    </property>
+    <property name="dateOfAllocation" type="date">
+      <column length="20" name="DATEOFALLOCATION"/>
+    </property>
+  </class>
+</hibernate-mapping>

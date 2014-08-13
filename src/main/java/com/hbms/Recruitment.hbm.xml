@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.Recruitment" schema="HRMS" table="RECRUITMENT">
+    <id name="id" type="java.lang.Integer">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="firstName" type="string">
+      <column length="30" name="FIRST_NAME"/>
+    </property>
+    <property name="middleName" type="string">
+      <column length="30" name="MIDDLE_NAME"/>
+    </property>
+    <property name="lastName" type="string">
+      <column length="30" name="LAST_NAME"/>
+    </property>
+    <property name="dob" type="date">
+      <column length="7" name="DOB"/>
+    </property>
+    <property name="bloodGroup" type="string">
+      <column length="7" name="BLOOD_GROUP"/>
+    </property>
+    <property name="nationality" type="string">
+      <column length="30" name="NATIONALITY"/>
+    </property>
+    <property name="gender" type="string">
+      <column length="10" name="GENDER"/>
+    </property>
+    <property name="status" type="string">
+      <column length="20" name="STATUS"/>
+    </property>
+    <property name="phoneNo" type="string">
+      <column length="20" name="PHONENO"/>
+    </property>
+    <property name="emailId" type="string">
+      <column length="30" name="EMAILID"/>
+    </property>
+    <property name="postApplied" type="string">
+      <column length="30" name="POSTAPPLIED"/>
+    </property>
+    <property name="imageBlob" type="blob">
+      <column name="IMAGE"/>
+    </property>
+    <property name="skills" type="string">
+      <column length="50" name="SKILLS"/>
+    </property>
+    <property name="exp" type="string">
+      <column length="20" name="EXPERIENCE"/>
+    </property>
+    <property name="expdesc" type="string">
+      <column length="100" name="EXPDESC"/>
+    </property>
+    <property name="quali" type="string">
+      <column length="30" name="QUALIFICATION"/>
+    </property>
+  </class>
+</hibernate-mapping>

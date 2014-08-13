@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.Attendence" schema="HRMS" table="ATTENDENCE">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="empCode" type="string">
+      <column length="20" name="EMP_CODE"/>
+    </property>
+    <property name="regularHrs" type="big_decimal">
+      <column name="REGULAR_HRS" precision="22" scale="0"/>
+    </property>
+    <property name="overtimeHrs" type="big_decimal">
+      <column name="OVERTIME_HRS" precision="22" scale="0"/>
+    </property>
+    <property name="totalHrs" type="big_decimal">
+      <column name="TOTAL_HRS" precision="22" scale="0"/>
+    </property>
+    <property name="empName" type="string">
+      <column length="40" name="EMP_NAME"/>
+    </property>
+    <property name="attendanceDate" type="date">
+      <column length="40" name="ATTENDANCE_DATE"/>
+    </property>
+  </class>
+</hibernate-mapping>

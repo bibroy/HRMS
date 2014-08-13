@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.EmployeeJobHistory" schema="HRMS" table="EMPLOYEEJOBHISTORY">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeId" type="string">
+      <column length="25" name="EMPLOYEEID"/>
+    </property>
+    <property name="name" type="string">
+      <column length="20" name="NAME"/>
+    </property>
+    <property name="DesignationID" type="string">
+      <column length="10" name="DESIGNATIONID"/>
+    </property>
+    <property name="BranchID" type="string">
+      <column length="35" name="BRANCHID"/>
+    </property>
+    <property name="DateOfJoin" type="date">
+      <column length="15" name="DATEOFJOIN"/>
+    </property>
+    <property name="DepartmentID" type="string">
+      <column length="15" name="DEPARTMENTID"/>
+    </property>
+    <property name="Nationality" type="string">
+      <column length="20" name="NATIONALITY"/>
+    </property>
+    <property name="Status" type="string">
+      <column length="20" name="STATUS"/>
+    </property>
+    <property name="ReasonOfLeavingJob" type="string">
+      <column length="200" name="REASONOFLEAVINGJOB"/>
+    </property>
+    <property name="runaway" type="string">
+      <column length="15" name="RUNAWAY"/>
+    </property>
+  </class>
+</hibernate-mapping>

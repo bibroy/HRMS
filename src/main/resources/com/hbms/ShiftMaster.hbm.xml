@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.ShiftMaster" schema="HRMS" table="SHIFTMASTER">
+    <id name="shiftID" type="java.lang.Integer">
+      <column name="SHIFT_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="shiftName" type="string">
+      <column length="20" name="SHIFT_NAME"/>
+    </property>
+    <property name="fromTime" type="timestamp">
+      <column name="FROM_TIME" precision="2"/>
+    </property>
+    <property name="toTime" type="timestamp">
+      <column name="TO_TIME" precision="2"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class  name="com.pojo.Client" schema="HRMS" table="CLIENT">
+    <id name="clId" type="java.lang.Integer">
+        <column name="CL_ID" precision="15" scale="0"/>
+      <generator class="increment"/>
+    </id>
+
+
+    <property name="status" type="string">
+      <column  length="10" name="STATUS"/>
+    </property>
+
+    <property name="address" type="string">
+      <column  length="100" name="ADDRESS"/>
+    </property>
+
+    <property name="clientCode" type="string">
+      <column  length="20" name="CLIENTCODE"/>
+    </property>
+
+    <property name="clientName" type="string">
+      <column  length="100" name="CLIENTNAME"/>
+    </property>
+
+    <property name="contactPerson" type="string">
+      <column  length="100" name="CONTACTPERSON"/>
+    </property>
+
+    <property name="email" type="string">
+      <column  length="100" name="EMAIL"/>
+    </property>
+
+    <property name="fax" type="string">
+      <column  length="50" name="FAX"/>
+    </property>
+
+
+    <property name="mobile" type="string">
+      <column  length="20" name="MOBILE"/>
+    </property>
+
+    <property name="phone" type="string">
+      <column  length="15" name="PHONE"/>
+    </property>
+
+    <property name="clientGrpid" type="java.lang.Integer">
+      <column  length="15" name="GR_MASTER_ID"/>
+    </property>
+
+    
+    <!--many-to-one class="com.pojo.ClientGroup" column="gr_master_id" insert="false" name="clientgroup" update="false"/-->
+  </class>
+</hibernate-mapping>

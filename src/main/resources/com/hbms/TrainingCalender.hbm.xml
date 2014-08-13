@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.TraingCalender" schema="HRMS" table="TRAINING_CALENDER">
+    <id name="id" type="java.lang.Integer">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="fromDate" type="date">
+      <column  name="FROMDATE"/>
+    </property>
+    <property name="toDate" type="date">
+      <column length="20" name="TODATE"/>
+    </property>
+    <property name="trainingName" type="string">
+      <column length="100" name="TRAININGNAME"/>
+    </property>
+    <property name="capacityStrenth" type="string">
+      <column length="20" name="CAPACITYSTRENTH"/>
+    </property>
+    <property name="createdBy" type="string">
+      <column length="20" name="CREATEDBY"/>
+    </property>
+
+    <property name="creationDate" type="date">
+      <column length="20" name="CREATIONDATE"/>
+    </property>
+
+  </class>
+</hibernate-mapping>

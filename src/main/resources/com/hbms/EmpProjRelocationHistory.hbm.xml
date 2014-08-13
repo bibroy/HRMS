@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.pojo.EmpProjRelocationHistory" schema="HRMS" table="EMP_PROJ_RELOCATION_HISTORY">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="empId" type="string">
+            <column name="EMP_ID" length="20"/>
+        </property>
+
+        <many-to-one class="com.pojo.Project" fetch="select" name="fromProj" >
+            <column name="FROM_PROJ" />
+        </many-to-one>
+        <many-to-one class="com.pojo.Project" fetch="select" name="toProj">
+            <column name="TO_PROJ" />
+        </many-to-one>
+        <many-to-one class="com.pojo.ProjectJobs" fetch="select" name="fromJob">
+            <column name="FROM_JOB" />
+        </many-to-one>
+        <many-to-one class="com.pojo.ProjectJobs" fetch="select" name="toJob">
+            <column name="TO_JOB"/>
+        </many-to-one>
+        <property name="relocationDate" type="date">
+            <column name="RELOCATION_DATE" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

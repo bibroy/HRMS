@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.LeaveDetails" schema="HRMS" table="LEAVE_MASTER">
+    <id name="leaveid" type="big_decimal">
+      <column name="LEAVEID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="leavetype" type="string">
+      <column name="LEAVETYPE"/>
+    </property>
+    <property name="carryfwenabled" type="string">
+      <column name="CARRYFWENABLED"/>
+    </property>
+    <property name="encashmentenabled" type="string">
+      <column name="ENCASHMENTENABLED"/>
+    </property>
+    <property name="leavestatus" type="string">
+      <column name="LEAVESTATUS"/>
+    </property>
+    <property name="companyname" type="string">
+      <column length="30" name="COMPANYNAME"/>
+    </property>
+    <property name="entitledfor" type="string">
+      <column length="30" name="ENTITLEDFOR"/>
+    </property>
+  </class>
+</hibernate-mapping>

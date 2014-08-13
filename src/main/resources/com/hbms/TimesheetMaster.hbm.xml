@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.TimesheetMaster" schema="HRMS" table="TIMESHEET_MASTER">
+    <id name="id" type="java.lang.Integer">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="projectId" type="string">
+      <column length="20" name="PROJECT_ID"/>
+    </property>
+    <property name="phase" type="string">
+      <column length="20" name="PHASE"/>
+    </property>
+    <property name="startTime" type="date">
+      <column length="15" name="STARTTIME"/>
+    </property>
+    <property name="endTime" type="date">
+      <column length="15" name="ENDTIME"/>
+    </property>
+    <property name="timeDuration" type="string">
+      <column length="20" name="TIMEDURATION"/>
+    </property>
+    <property name="task" type="java.lang.Integer">
+      <column name="TASK" precision="22" scale="0"/>
+    </property>
+    <property name="remarks" type="string">
+      <column length="30" name="REMARKS"/>
+    </property>
+    <property name="workStatus" type="string">
+      <column length="20" name="WORK_STATUS"/>
+    </property>
+    <property name="assignedTo" type="string">
+      <column length="20" name="ASSIGNEDTO"/>
+    </property>
+  </class>
+</hibernate-mapping>

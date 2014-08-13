@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.EmployeeEducationDetails" schema="HRMS" table="EMPLOYEE_EDUCATION_DETAILS">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeId" type="string">
+      <column length="15" name="EMPLOYEE_ID"/>
+    </property>
+    <property name="examinationName" type="string">
+      <column length="200" name="EXAMINATION_NAME"/>
+    </property>
+    <property name="yearOfStart" type="date">
+      <column length="7" name="YEAR_OF_START"/>
+    </property>
+    <property name="yearOfEnd" type="date">
+      <column length="7" name="YEAR_OF_END"/>
+    </property>
+    <property name="percentage" type="big_decimal">
+      <column name="PERCENTAGE" precision="22" scale="0"/>
+    </property>
+    <property name="boardName" type="string">
+      <column length="100" name="BOARD_NAME"/>
+    </property>
+    <property name="institutionName" type="string">
+      <column length="100" name="INSTITUTION_NAME"/>
+    </property>
+    <property name="specialisation" type="string">
+      <column length="100" name="SPECIALISATION"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.GradeMaster" schema="HRMS" table="GRADEMASTER">
+    <id name="grade" type="string">
+      <column name="GRADE" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="maxSalary" type="string">
+      <column length="50" name="MAX_SALARY"/>
+    </property>
+    <property name="minSalary" type="string">
+      <column length="50" name="MIN_SALARY"/>
+    </property>
+    <property name="status" type="string">
+      <column length="2" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

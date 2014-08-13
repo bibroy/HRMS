@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.EmployeeConfirmation" schema="HRMS" table="EMPLOYEE_CONFIRMATION">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeId" type="string">
+      <column length="15" name="EMPLOYEE_ID"/>
+    </property>
+    <property name="confDate" type="date">
+      <column length="7" name="CONF_DATE"/>
+    </property>
+    <property name="status" type="java.lang.Character">
+      <column length="1" name="STATUS"/>
+    </property>
+    <property name="confDueDate" type="date">
+      <column length="7" name="CONF_DUE_DATE"/>
+    </property>
+    <property name="effectiveFrom" type="date">
+      <column length="7" name="EFFECTIVE_FROM"/>
+    </property>
+  </class>
+</hibernate-mapping>

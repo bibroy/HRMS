@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.GoalSetting" schema="HRMS" table="GOAL_SETTING">
+    <id name="goalId" type="java.lang.Integer">
+      <column name="GOAL_ID" precision="15" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="goalTitle" type="string">
+      <column length="30" name="GOAL_TITLE"/>
+    </property>
+    <property name="goalDesc" type="string">
+      <column length="100" name="GOAL_DESC"/>
+    </property>
+    <property name="priority" type="java.lang.Integer">
+      <column precision="3" scale="0" name="PRIORITY"/>
+    </property>
+    <property name="goalSetDate" type="date">
+        <column length="10" name="GOAL_SET_DATE"/>
+    </property>
+    <property name="probableCompletionDate" type="date">
+        <column length="10" name="PROBABLE_COMPLETION_DATE"/>
+    </property>
+    <property name="actualCompletionDate" type="date">
+        <column length="10" name="ACTUAL_COMPLETION_DATE"/>
+    </property>
+    <property name="currentStatus" type="string">
+        <column length="50" name="CURRENT_STATUS"/>
+    </property>
+    <property name="relatedOrgObjective" type="string">
+        <column length="100" name="RELATED_ORG_OBJECTIVE"/>
+    </property>
+    <property name="newSkillsAcquired" type="string">
+        <column length="100" name="NEW_SKILLS_ACQUIRED"/>
+    </property>
+    <property name="employeeId" type="string">
+        <column length="20" name="EMP_ID"/>
+    </property>
+  </class>
+</hibernate-mapping>

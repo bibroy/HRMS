@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.Leave" schema="HRMS" table="LEAVE_APPLY">
+    <id name="requestid" type="big_decimal">
+      <column name="REQUESTID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="empid" type="string">
+      <column length="15" name="EMPID"/>
+    </property>
+    <property name="day" type="java.lang.Double">
+      <column name="DAY" precision="126" scale="0"/>
+    </property>
+    <property name="fromDate" type="date">
+      <column length="7" name="FROM_DATE"/>
+    </property>
+    <property name="toDate" type="date">
+      <column length="7" name="TO_DATE"/>
+    </property>
+    <property name="reason" type="string">
+      <column name="REASON"/>
+    </property>
+    <property name="leaveAddress" type="string">
+      <column name="LEAVE_ADDRESS"/>
+    </property>
+    <property name="leaveContactno" type="string">
+      <column name="LEAVE_CONTACTNO"/>
+    </property>
+    <property name="leavestatus" type="string">
+      <column name="LEAVESTATUS"/>
+    </property>
+    <property name="noofdays" type="java.lang.Double">
+      <column name="NOOFDAYS" precision="126" scale="0"/>
+    </property>
+    <property name="leaveType" type="java.lang.Integer">
+      <column name="LEAVE_TYPE" precision="22" scale="0"/>
+    </property>
+    <property name="email" type="string">
+      <column length="30" name="EMAIL"/>
+    </property>
+    <property name="approvalauthoriyEmployeeid" type="string">
+      <column length="15" name="APPROVALAUTHORIY_EMPLOYEEID"/>
+    </property>
+    <property name="requestdate" type="date">
+      <column length="7" name="REQUESTDATE"/>
+    </property>
+    <property name="approvaldate" type="date">
+      <column length="7" name="APPROVALDATE"/>
+    </property>
+    <property name="whyreject" type="string">
+      <column length="60" name="WHYREJECT"/>
+    </property>
+  </class>
+</hibernate-mapping>

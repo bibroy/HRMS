@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.EmployeeAccountDetails" schema="HRMS" table="EMPLOYEE_ACCOUNT_DETAILS">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="bankName" type="string">
+      <column length="25" name="BANK_NAME"/>
+    </property>
+    <property name="accountNo" type="big_decimal">
+      <column name="ACCOUNT_NO" precision="22" scale="0"/>
+    </property>
+    <property name="accountType" type="string">
+      <column length="10" name="ACCOUNT_TYPE"/>
+    </property>
+    <property name="branchAddress" type="string">
+      <column length="35" name="BRANCH_ADDRESS"/>
+    </property>
+    <property name="contactNo" type="string">
+      <column length="15" name="CONTACT_NO"/>
+    </property>
+    <property name="employeeId" type="string">
+      <column length="15" name="EMPLOYEE_ID"/>
+    </property>
+    
+  </class>
+</hibernate-mapping>

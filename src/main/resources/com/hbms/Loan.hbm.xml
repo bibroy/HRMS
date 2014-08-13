@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.Loan" schema="HRMS" table="LOAN">
+    <id name="requestid" type="big_decimal">
+      <column name="REQUESTID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeid" type="string">
+      <column length="15" name="EMPLOYEEID"/>
+    </property>
+    <property name="totalsalary" type="java.lang.Double">
+      <column name="TOTALSALARY" precision="126" scale="0"/>
+    </property>
+    <property name="loanamount" type="java.lang.Double">
+      <column name="LOANAMOUNT" precision="126" scale="0"/>
+    </property>
+    <property name="noofinstallment" type="big_decimal">
+      <column name="NOOFINSTALLMENT" precision="22" scale="0"/>
+    </property>
+    <property name="deductionstartmonth" type="date">
+      <column length="7" name="DEDUCTIONSTARTMONTH"/>
+    </property>
+    <property name="approvalstatus" type="string">
+      <column length="20" name="APPROVALSTATUS"/>
+    </property>
+    <property name="reason" type="string">
+      <column length="50" name="REASON"/>
+    </property>
+    <property name="approvalauthoriyEmployeeid" type="string">
+      <column length="15" name="APPROVALAUTHORIY_EMPLOYEEID"/>
+    </property>
+    <property name="approvaldate" type="date">
+      <column length="7" name="APPROVALDATE"/>
+    </property>
+    <property name="requestdate" type="date">
+      <column length="7" name="REQUESTDATE"/>
+    </property>
+  </class>
+</hibernate-mapping>

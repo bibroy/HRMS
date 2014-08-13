@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.TrainingMaster" schema="HRMS" table="TRAINING_MASTER">
+    <id name="trainingId" type="big_decimal">
+      <column name="TRAINING_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="trainingType" type="string">
+      <column length="30" name="TRAINING_TYPE"/>
+    </property>
+    <property name="trainingName" type="string">
+      <column length="30" name="TRAINING_NAME"/>
+    </property>
+    <property name="trainer" type="string">
+      <column length="55" name="TRAINER"/>
+    </property>
+    <property name="consultacyId" type="big_decimal">
+      <column name="CONSULTACY_ID" precision="22" scale="0"/>
+    </property>
+    <property name="status" type="string">
+      <column length="11" name="STATUS"/>
+    </property>
+    <property name="departmentId" type="big_decimal">
+      <column name="DEPARTMENT_ID" precision="22" scale="0"/>
+    </property>
+    <property name="skillId" type="big_decimal">
+      <column name="SKILL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="typeId" type="big_decimal">
+      <column name="TYPE_ID" precision="22" scale="0"/>
+    </property>
+    <set inverse="true" name="trainingTrainingTypes">
+      <key>
+        <column name="TRAINING_ID" not-null="true" precision="22" scale="0" unique="true"/>
+      </key>
+      <one-to-many class="com.pojo.TrainingTrainingType"/>
+    </set>
+  </class>
+</hibernate-mapping>

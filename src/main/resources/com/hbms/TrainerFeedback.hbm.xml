@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.TrainerFeedback" schema="HRMS" table="TrainerFeedback">
+    <id name="id" type="java.lang.Integer">
+      <column name="ID" precision="15" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="trainingid" type="java.lang.Integer">
+      <column  name="TRAINERID"/>
+    </property>
+    <property name="trainingtype" type="string">
+      <column length="20" name="TRAININGTYPE"/>
+    </property>
+
+    <property name="score" type="java.lang.Integer">
+      <column precision="15" name="SCORE"/>
+    </property>
+
+
+    <property name="startdate" type="date">
+      <column length="20" name="STARTDATE"/>
+    </property>
+    
+
+    <property name="endDate" type="date">
+      <column length="20" name="ENDDATE"/>
+    </property>
+
+
+    <property name="employeeID" type="string">
+      <column length="20" name="EMPLOYEEID"/>
+    </property>
+
+    <property name="maxmarks" type="java.lang.Integer">
+      <column length="20" name="MAXMARKS"/>
+    </property>
+
+
+  </class>
+</hibernate-mapping>

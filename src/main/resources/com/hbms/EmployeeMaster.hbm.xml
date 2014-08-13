@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class  name="com.pojo.EmployeeMaster" schema="HRMS" table="EMPLOYEE_MASTER">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeId" type="string">
+      <column length="15" name="EMPLOYEE_ID" unique="true"/>
+    </property>
+    <property name="firstName" type="string">
+      <column length="50" name="FIRST_NAME"/>
+    </property>
+    <property name="middleName" type="string">
+      <column length="50" name="MIDDLE_NAME"/>
+    </property>
+    <property name="lastName" type="string">
+      <column length="50" name="LAST_NAME"/>
+    </property>
+    <property name="presentAddress" type="string">
+      <column length="100" name="PRESENT_ADDRESS"/>
+    </property>
+    <property name="presentCountry" type="big_decimal">
+      <column name="PRESENT_COUNTRY" precision="22" scale="0"/>
+    </property>
+    <property name="presentState" type="big_decimal">
+      <column name="PRESENT_STATE" precision="22" scale="0"/>
+    </property>
+    <property name="presentCity" type="big_decimal">
+      <column name="PRESENT_CITY" precision="22" scale="0"/>
+    </property>
+    <property name="permanentAddress" type="string">
+      <column length="100" name="PERMANENT_ADDRESS"/>
+    </property>
+    <property name="permanentCountry" type="big_decimal">
+      <column name="PERMANENT_COUNTRY" precision="22" scale="0"/>
+    </property>
+    <property name="permanentState" type="big_decimal">
+      <column name="PERMANENT_STATE" precision="22" scale="0"/>
+    </property>
+    <property name="permanentCity" type="big_decimal">
+      <column name="PERMANENT_CITY" precision="22" scale="0"/>
+    </property>
+    <property name="emailAddress" type="string">
+      <column length="25" name="EMAIL_ADDRESS"/>
+    </property>
+    <property name="phNoResidencial" type="string">
+      <column length="15" name="PH_NO_RESIDENCIAL"/>
+    </property>
+    <property name="phNoOffice" type="string">
+      <column length="15" name="PH_NO_OFFICE"/>
+    </property>
+    <property name="mobileNo" type="string">
+      <column length="15" name="MOBILE_NO"/>
+    </property>
+    <property name="emergencyContactPerson" type="string">
+      <column length="100" name="EMERGENCY_CONTACT_PERSON"/>
+    </property>
+    <property name="emergencyContactNoPrimary" type="string">
+      <column length="15" name="EMERGENCY_CONTACT_NO_PRIMARY"/>
+    </property>
+    <property name="emergencyContactAddress" type="string">
+      <column length="100" name="EMERGENCY_CONTACT_ADDRESS"/>
+    </property>
+    <property name="bloodGroup" type="string">
+      <column length="5" name="BLOOD_GROUP"/>
+    </property>
+    <property name="dateOfBirth" type="date">
+      <column length="7" name="DATE_OF_BIRTH"/>
+    </property>
+    <property name="gender" type="string">
+      <column length="8" name="GENDER"/>
+    </property>
+    <property name="image" type="string">
+      <column length="70" name="IMAGE"/>
+    </property>
+    <property name="origin" type="string">
+      <column length="25" name="ORIGIN"/>
+    </property>
+    <property name="religion" type="string">
+      <column length="25" name="RELIGION"/>
+    </property>
+    <property name="permanentAddressPin" type="big_decimal">
+      <column name="PERMANENT_ADDRESS_PIN" precision="22" scale="0"/>
+    </property>
+    <property name="presentAddressPin" type="big_decimal">
+      <column name="PRESENT_ADDRESS_PIN" precision="22" scale="0"/>
+    </property>
+    <property name="emergencyContactRelationship" type="string">
+      <column length="25" name="EMERGENCY_CONTACT_RELATIONSHIP"/>
+    </property>
+    <property name="emergencyContactNoSecondary" type="string">
+      <column length="15" name="EMERGENCY_CONTACT_NO_SECONDARY"/>
+    </property>
+    <property name="entryBy" type="string">
+      <column length="15" name="ENTRY_BY"/>
+    </property>
+    <property name="entryDate" type="date">
+      <column length="7" name="ENTRY_DATE"/>
+    </property>
+    <property name="modifiedBy" type="string">
+      <column length="15" name="MODIFIED_BY"/>
+    </property>
+    <property name="modifiedDate" type="date">
+      <column length="7" name="MODIFIED_DATE"/>
+    </property>
+    <property name="employeeStatus" type="string">
+      <column length="15" name="EMPLOYEE_STATUS"/>
+    </property>
+    <property name="nationality" type="string">
+      <column length="15" name="NATIONALITY"/>
+    </property>
+    <property name="hobby" type="string">
+      <column length="200" name="HOBBY"/>
+    </property>
+    <property name="languageKnown" type="string">
+      <column length="150" name="LANGUAGE_KNOWN"/>
+    </property>
+    <property name="languageProficiency" type="string">
+      <column length="50" name="LANGUAGE_PROFICIENCY"/>
+    </property>
+    <property name="identificationMark" type="string">
+      <column length="25" name="IDENTIFICATION_MARK"/>
+    </property>
+    <property name="designationId" type="integer">
+      <column name="DESIGNATION_ID" precision="22" scale="0"/>
+    </property>
+    <property name="status" type="string">
+      <column length="10" name="STATUS"/>
+    </property>
+    <property name="departmentId" type="big_decimal">
+      <column name="DEPARTMENT_ID" precision="22" scale="0"/>
+    </property>
+    <property name="branchId" type="big_decimal">
+      <column name="BRANCH_ID" precision="22" scale="0"/>
+    </property>
+    <property name="domainId" type="big_decimal">
+      <column name="DOMAIN_ID" precision="22" scale="0"/>
+    </property>
+    <property name="dateOfJoin" type="date">
+      <column length="7" name="DATE_OF_JOIN"/>
+    </property>
+    <property name="typeId" type="big_decimal">
+      <column name="TYPE_ID" precision="22" scale="0"/>
+    </property>
+    <property name="supervisorId" type="string">
+      <column length="20" name="SUPERVISOR_ID"/>
+    </property>
+    <property name="imageBlob" type="blob">
+      <column name="EMPIMAGE"/>
+    </property>
+    <many-to-one class="com.pojo.GradeMaster" fetch="select" name="grade">
+      <column length="2" name="grade"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

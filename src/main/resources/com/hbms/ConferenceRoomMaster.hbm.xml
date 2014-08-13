@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.ConferenceRoomMaster" schema="HRMS" table="CONFERENCE_ROOM_MASTER">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="roomstatus" type="string">
+      <column length="10" name="ROOMSTATUS"/>
+    </property>
+    <property name="strength" type="big_decimal">
+      <column name="STRENGTH" precision="22" scale="0"/>
+    </property>
+    <property name="roomdeatils" type="string">
+      <column length="20" name="ROOMDEATILS"/>
+    </property>
+    <property name="buildingname" type="string">
+      <column length="20" name="BUILDINGNAME"/>
+    </property>
+    <property name="floorno" type="big_decimal">
+      <column name="FLOORNO" precision="22" scale="0"/>
+    </property>
+    <property name="roomno" type="big_decimal">
+      <column name="ROOMNO" precision="22" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

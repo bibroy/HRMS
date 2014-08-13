@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.pojo.LeaveStatusPeremployee" table="LEAVE_STATUS_PEREMPLOYEE">
+    <id column="ID" name="id">
+      <generator class="increment"/>
+    </id>
+    <property column="LEAVEID" name="leaveid"/>
+    <property column="EMPID" name="empid"/>
+    <property column="TOTALLEAVE" name="totalleave"/>
+    <property column="LEAVETAKEN" name="leavetaken"/>
+    <!--many-to-one column="EMPID" name="empid" class="com.pojo.EmployeeMaster" insert="false" update="false" lazy="false" />
+      <many-to-one column="LEAVEID" name="leaveid" class="com.pojo.LeaveDetails" insert="false" update="false" lazy="false"/-->
+  </class>
+</hibernate-mapping>

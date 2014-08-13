@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.ProjectManagementTransaction" table="PROJECT_MANAGEMENT_TRANSACTION">
+    <id column="ID" name="Id">
+      <generator class="increment"/>
+    </id>
+    <property column="BRANCH_ID" name="branchId"/>
+    <property column="COMPANY_ID" name="companyId"/>
+    <property column="DEPARTMENT_ID" name="departmentId"/>
+    <property column="DESIGNATION_ID" name="designationId"/>
+    <property column="GROUP_COMPANY_ID" name="groupCompanyId"/>
+    <property column="RESOURCE_ID" name="resourceId"/>
+    <property column="TASK_ID" name="taskId"/>
+    <property column="PROJECT_CODE" name="projectCode"/>
+  </class>
+</hibernate-mapping>

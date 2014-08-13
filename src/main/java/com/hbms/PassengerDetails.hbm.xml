@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.PassengerDetails" schema="HRMS" table="PASSENGER_DETAILS">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeid" type="string">
+      <column length="40" name="EMPLOYEEID"/>
+    </property>
+    <property name="memberName" type="string">
+      <column length="40" name="MEMBER_NAME"/>
+    </property>
+    <property name="memberRelation" type="string">
+      <column length="40" name="MEMBER_RELATION"/>
+    </property>
+    <property name="memberDob" type="date">
+      <column length="7" name="MEMBER_DOB"/>
+    </property>
+    <property name="familyid" type="java.lang.Integer">
+      <column length="20" name="FAMILYID"/>
+    </property>
+  </class>
+</hibernate-mapping>

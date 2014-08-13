@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ec" class="java.lang.String"/>
+	<queryString language="hql">
+		<![CDATA[select ar.category_code as catcode,ar.appraisal_date as dat, ar.score as score,ar.employee_code as employee ,ac.category_name as catname from AppraisalResultSum ar,AppraisalCategory ac where ar.employee_code=$P{ec} and ar.category_code=ac.category_code and ar.appraisal_date in(select max(qq.appraisal_date) from AppraisalResultSum qq)]]>
+	</queryString>
+	<field name="catcode" class="java.lang.Integer"/>
+	<field name="dat" class="java.util.Date"/>
+	<field name="score" class="java.lang.Double"/>
+	<field name="employee" class="java.lang.String"/>
+	<field name="catname" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="16" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="16" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="9" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="7" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="9" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="650" splitType="Stretch">
+			<pie3DChart>
+				<chart>
+					<reportElement x="106" y="31" width="390" height="281"/>
+					<chartTitle color="#3333FF">
+						<font size="14"/>
+						<titleExpression><![CDATA[ "Pie chart is for Appraisal of employee:"+$F{employee}]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{catname}+" "+$F{score}+"%"]]></keyExpression>
+					<valueExpression><![CDATA[$F{score}]]></valueExpression>
+					<labelExpression><![CDATA[$F{catname}+" "+$F{score}+"%"]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+				</pie3DPlot>
+			</pie3DChart>
+			<xyBarChart>
+				<chart>
+					<reportElement x="126" y="390" width="325" height="246"/>
+					<chartTitle position="Top" color="#3333FF">
+						<font size="14"/>
+						<titleExpression><![CDATA["Bar chart is for appraisal of employee:"+$F{employee}]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<xyDataset>
+					<xySeries>
+						<seriesExpression><![CDATA[$F{catname}+" "+$F{score}+"%"]]></seriesExpression>
+						<xValueExpression><![CDATA[$F{catcode}]]></xValueExpression>
+						<yValueExpression><![CDATA[$F{score}]]></yValueExpression>
+						<labelExpression><![CDATA[$F{catname}]]></labelExpression>
+					</xySeries>
+				</xyDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</xyBarChart>
+		</band>
+	</summary>
+</jasperReport>

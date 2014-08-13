@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.pojo.AppraisalQuestions" table="appraisal_questions">
+    <id column="question_code" name="question_code">
+      <generator class="increment"/>
+    </id>
+    <property column="category_code" name="category_code"/>
+    <property formula="(select c.category_name from appraisal_category c where c.category_code=category_code)" name="category_name"/>
+    <property column="question" name="question"/>
+    <property column="created_by" name="created_by"/>
+    <property column="creation_date" name="creation_date"/>
+    <property column="modification_date" name="modification_date"/>
+    <property column="modified_by" name="modified_by"/>
+    <property column="status" name="status"/>
+    <!--many-to-one class="com.pojo.AppraisalCategory" insert="false" name="category_id" update="false" column="category_code" -->
+  </class>
+</hibernate-mapping>

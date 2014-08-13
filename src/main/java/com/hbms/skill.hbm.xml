@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.Skills" table="skill_master">
+    <id column="skill_id" name="skillId">
+      <generator class="increment"/>
+    </id>
+    <property column="skill_name" generated="never" lazy="false" name="skillName" optimistic-lock="true" unique="false"/>
+    <property column="department_id" generated="never" lazy="false" name="departmentId" optimistic-lock="true" unique="false"/>
+    <property column="type_id" generated="never" lazy="false" name="typeId" optimistic-lock="true" unique="false"/>
+    <property column="status" generated="never" lazy="false" name="status" optimistic-lock="true" unique="false"/>
+  </class>
+</hibernate-mapping>

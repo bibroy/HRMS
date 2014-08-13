@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.EmployeeFamilyDetailspojo" schema="HRMS" table="EMPLOYEE_FAMILY_DETAILS">
+    <id name="id" type="big_decimal">
+      <column name="id" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employee_id" type="string">
+      <column length="15" name="employee_id"/>
+    </property>
+    <property name="family_member_name" type="string">
+      <column length="200" name="family_member_name"/>
+    </property>
+    <property name="relation" type="string">
+      <column length="200" name="relation"/>
+    </property>
+    <property name="dob_of_member" type="date">
+      <column length="7" name="dob_of_member"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.AppraisalResult" schema="HRMS" table="appraisal_result">
+    <id name="id" type="int">
+      <column length="40" name="ID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="category_code" type="java.lang.Integer">
+      <column name="CATEGORY_CODE" precision="22"/>
+    </property>
+    <property name="question_code" type="java.lang.Integer">
+      <column name="QUESTION_CODE" precision="22" scale="0"/>
+    </property>
+    <property name="answer" type="string">
+      <column length="10" name="ANSWER"/>
+    </property>
+    <property name="employee_code" type="string">
+      <column length="100" name="EMPLOYEE_CODE"/>
+    </property>
+    <property name="appraisedate" type="date">
+      <column length="100" name="APPRAISE_DATE"/>
+    </property>
+  </class>
+</hibernate-mapping>

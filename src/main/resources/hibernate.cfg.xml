@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+    <property name="hibernate.connection.username">HRMS</property>
+    <property name="hibernate.connection.password">hrms</property>
+    <mapping resource="com/hbms/Manualattendence.hbm.xml"/>
+    <mapping resource="com/hbms/PreviousEmployerDetails.hbm.xml"/>
+    <mapping resource="com/hbms/PrivilegeMaster.hbm.xml"/>
+    <mapping resource="com/hbms/SalaryHead.hbm.xml"/>
+    <mapping resource="com/hbms/ComplainDetails.hbm.xml"/>
+    <mapping resource="com/hbms/TrainingType.hbm.xml"/>
+    <mapping resource="com/hbms/AdvancedSalaryRequest.hbm.xml"/>
+    <mapping resource="com/hbms/EmployeeConfirmation.hbm.xml"/>
+    <mapping class="com.pojo.AppraisalSetup" file="" jar="" package="" resource="com/hbms/appraisalSetup.hbm.xml"/>
+    <mapping resource="com/hbms/EmployeeMaster.hbm.xml"/>
+    <mapping resource="com/hbms/CompanyMaster.hbm.xml"/>
+    <mapping resource="com/hbms/StateMaster.hbm.xml"/>
+    <mapping resource="com/hbms/FacilityRequisition.hbm.xml"/>
+    <mapping resource="com/hbms/ConferenceRoomMaster.hbm.xml"/>
+    <mapping resource="com/hbms/AppraisalGradeMaster.hbm.xml"/>
+    <mapping resource="com/hbms/RecieptDocuments.hbm.xml"/>
+    <mapping resource="com/hbms/PercentageMasteer.hbm.xml"/>
+    <mapping resource="com/hbms/TrainingTrainingType.hbm.xml"/>
+    <mapping resource="com/hbms/EmployeeEducationDetails.hbm.xml"/>
+    <mapping resource="com/hbms/AdvanceSalaryInstallment.hbm.xml"/>
+    <mapping resource="com/hbms/TrainingRequestMaster.hbm.xml"/>
+    <mapping resource="com/hbms/EmployeeSkill.hbm.xml"/>
+    <mapping resource="com/hbms/Transport.hbm.xml"/>
+    <mapping resource="com/hbms/ProfReferenceDetails.hbm.xml"/>
+    <mapping resource="com/hbms/RoleMaster.hbm.xml"/>
+    <mapping resource="com/hbms/DepartmentMaster.hbm.xml"/>
+    <mapping resource="com/hbms/CountryMaster.hbm.xml"/>
+    <mapping resource="com/hbms/CompanyTypeMaster.hbm.xml"/>
+    <mapping resource="com/hbms/GroupCompanyMaster.hbm.xml"/>
+    <mapping resource="com/hbms/AssetsMaster.hbm.xml"/>
+    <mapping resource="com/hbms/LeaveMaster.hbm.xml"/>
+    <mapping resource="com/hbms/TimesheetDetail.hbm.xml"/>
+    <mapping resource="com/hbms/JobType.hbm.xml"/>
+    <mapping resource="com/hbms/ConsultantMaster.hbm.xml"/>
+    <mapping class="com.pojo.Menu" file="" jar="" package="" resource="com/hbms/Menu.hbm.xml"/>
+    <mapping class="com.pojo.AppraisalCategory" file="" jar="" package="" resource="com/hbms/appraisalCategory.hbm.xml"/>
+    <mapping resource="com/hbms/DesignationMaster.hbm.xml"/>
+    <mapping resource="com/hbms/VisaPassortDetails.hbm.xml"/>
+    <mapping class="com.pojo.Loan" file="" jar="" package="" resource="com/hbms/Loan.hbm.xml"/>
+    <mapping resource="com/hbms/TrainingMaster.hbm.xml"/>
+    <mapping resource="com/hbms/EmployeeCertification.hbm.xml"/>
+    <mapping resource="com/hbms/TaskMaster.hbm.xml"/>
+    <mapping resource="com/hbms/EmployeeAccountDetails.hbm.xml"/>
+    <mapping resource="com/hbms/ConferenceRoomBooking.hbm.xml"/>
+    <mapping resource="com/hbms/TimesheetHeader.hbm.xml"/>
+    <mapping class="com.pojo.AppraisalQuestions" file="" jar="" package="" resource="com/hbms/appraisalQuestion.hbm.xml"/>
+    <mapping resource="com/hbms/RelatedDocuments.hbm.xml"/>
+    <mapping resource="com/hbms/CityMaster.hbm.xml"/>
+    <mapping resource="com/hbms/LeaveApply.hbm.xml"/>
+    <mapping resource="com/hbms/TransportMaster.hbm.xml"/>
+    <mapping resource="com/hbms/TravelReimbursment.hbm.xml"/>
+    <mapping resource="com/hbms/PhoneReimbursment.hbm.xml"/>
+    <mapping resource="com/hbms/PassengerDetails.hbm.xml"/>
+    <mapping class="com.pojo.Login" file="" jar="" package="" resource="com/hbms/Login.hbm.xml"/>
+    <mapping resource="com/hbms/TrainingRequestEmployee.hbm.xml"/>
+    <mapping resource="com/hbms/BranchMaster.hbm.xml"/>
+    <mapping resource="com/hbms/AssetAvailability.hbm.xml"/>
+    <mapping resource="com/hbms/Attendence.hbm.xml"/>
+    <mapping class="com.pojo.EmployeeFamilyDetails" file="" jar="" package="" resource="com/hbms/EmployeeFamilyDetails.hbm.xml"/>
+    <mapping class="com.pojo.LeavePerRole" resource="com/hbms/leavePerRole.hbm.xml"/>
+    <mapping class="com.pojo.LeaveStatusPeremployee" resource="com/hbms/LeaveStatusPeremployee.hbm.xml"/>
+    <mapping class="com.pojo.SalaryBreakup" resource="com/hbms/SalaryBreakup.hbm.xml"/>
+    <mapping class="com.pojo.Airticket" resource="com/hbms/Airticket.hbm.xml"/>
+    <mapping class="com.pojo.AppraisalEmpInfo" resource="com/hbms/appraisalEmpInfo.hbm.xml"/>
+    <mapping class="com.pojo.AppraisalResultSum" resource="com/hbms/AppraisalResultSum.hbm.xml"/>
+    <mapping class="com.pojo.AppraisalResult" resource="com/hbms/AppraisalResult.hbm.xml"/>
+    <mapping class="com.pojo.Skills" resource="com/hbms/skill.hbm.xml"/>
+    <mapping class="com.pojo.TrainingTransation" resource="com/hbms/trainingTransaction.hbm.xml"/>
+    <mapping class="com.pojo.Training" resource="com/hbms/training.hbm.xml"/>
+    <mapping class="com.pojo.ClientGroup" resource="com/hbms/ClientGroup.hbm.xml"/>
+    <mapping class="com.pojo.Client" resource="com/hbms/client.hbm.xml"/>
+    <mapping class="com.pojo.Project" resource="com/hbms/project.hbm.xml"/>
+    <mapping class="com.pojo.ProjectManagementTransaction" resource="com/hbms/projectmanagementtransaction.xml"/>
+    <mapping class="com.pojo.Task" resource="com/hbms/task.hbm.xml"/>
+    <mapping class="com.pojo.Recruitment" resource="com/hbms/Recruitment.hbm.xml"/>
+    <mapping class="com.pojo.RecruitmentMarks" resource="com/hbms/RecruitmentMarks.hbm.xml"/>
+    <mapping class="com.pojo.TimesheetMaster" resource="com/hbms/TimesheetMaster.hbm.xml"/>
+    <mapping class="com.pojo.VisaRequestDetails" resource="com/hbms/VisaRequestDetails.hbm.xml"/>
+    <mapping class="com.pojo.DailyAttendance" resource="com/hbms/DailyAttendence.hbm.xml"/>
+    <mapping class="com.pojo.EmpSkills" resource="com/hbms/EmpSkills.hbm.xml"/>
+    <mapping class="com.pojo.KeyPosition" resource="com/hbms/KeyPosition.hbm.xml"/>
+    <mapping class="com.pojo.vacancies" resource="com/hbms/Vacancies.hbm.xml"/>
+    <mapping class="com.pojo.recruitmentRequestpojo" resource="com/hbms/recruitmentRequst.hbm.xml"/>
+    <mapping class="com.pojo.Agencies" resource="com/hbms/Agencies.hbm.xml"/>
+    <mapping class="com.pojo.EmployeeJobHistory" resource="com/hbms/EmployeeJobHistory.hbm.xml"/>
+    <mapping class="com.pojo.AssessmentEvent" resource="com/hbms/assessmentEvent.hbm.xml"/>
+    <mapping class="com.pojo.TimeSlot" resource="com/hbms/Timeslot.hbm.xml"/>
+    <mapping class="com.pojo.TimeSheetMapping" resource="com/hbms/TimesheetMapping.hbm.xml"/>
+    <mapping class="com.pojo.GradeMaster" resource="com/hbms/GradeMaster.hbm.xml"/>
+    <mapping class="com.pojo.ShiftMaster" resource="com/hbms/ShiftMaster.hbm.xml"/>
+    <mapping class="com.pojo.WorkShift" resource="com/hbms/WorkShift.hbm.xml"/>
+    <mapping class="com.pojo.TraingCalender" resource="com/hbms/TrainingCalender.hbm.xml"/>
+    <mapping class="com.pojo.TrainingSchedule" resource="com/hbms/TrainingShedule.hbm.xml"/>
+    <mapping class="com.pojo.ProjectJobs" resource="com/hbms/ProjectJobs.hbm.xml"/>
+    <mapping class="com.pojo.ProjectEmp" resource="com/hbms/ProjectEmp.hbm.xml"/>
+    <mapping class="com.pojo.EmpProjRelocationHistory" resource="com/hbms/EmpProjRelocationHistory.hbm.xml"/>
+    <mapping class="com.pojo.CompensationIndicatorMaster" resource="com/hbms/compensationIndicatorMaster.hbm.xml"/>
+    <mapping class="com.pojo.CompensationIncrementBand" resource="com/hbms/compensationIncrementBand.hbm.xml"/>
+    <mapping class="com.pojo.CompensationPerformanceIndicator" resource="com/hbms/compensationPerformanceIndicator.hbm.xml"/>
+    <mapping class="com.pojo.CompensationCalculatedScore" resource="com/hbms/compensationScoreCalculation.hbm.xml"/>
+    <mapping class="com.pojo.CompensationPerformancesheet" resource="com/hbms/compensationPerformancesheet.hbm.xml"/>
+    <mapping class="com.pojo.TrainerFeedback" resource="com/hbms/TrainerFeedback.hbm.xml"/>
+    <mapping class="com.pojo.GoalSetting" resource="com/hbms/GoalSetting.hbm.xml"/>
+    <mapping class="com.pojo.EmployeeFamilyDetailspojo" resource="com/hbms/EmployeeFamilyDetailsmodified.hbm.xml"/>
+    <mapping class="com.pojo.selfAppraisalResult" resource="com/hbms/SelfAppraisalResult.hbm.xml"/>
+    <mapping class="com.pojo.Successor" resource="com/hbms/succcessor.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

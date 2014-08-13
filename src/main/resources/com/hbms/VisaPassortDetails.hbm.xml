@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.VisaPassortDetails" schema="HRMS" table="VISA_PASSORT_DETAILS">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeId" type="string">
+      <column length="15" name="EMPLOYEE_ID"/>
+    </property>
+    <property name="passportNo" type="string">
+      <column length="25" name="PASSPORT_NO"/>
+    </property>
+    <property name="passportIssueDate" type="date">
+      <column length="7" name="PASSPORT_ISSUE_DATE"/>
+    </property>
+    <property name="passportIssuedBy" type="string">
+      <column length="25" name="PASSPORT_ISSUED_BY"/>
+    </property>
+    <property name="passportValidUpto" type="date">
+      <column length="7" name="PASSPORT_VALID_UPTO"/>
+    </property>
+    <property name="visaNo" type="string">
+      <column length="25" name="VISA_NO"/>
+    </property>
+    <property name="visaType" type="string">
+      <column length="10" name="VISA_TYPE"/>
+    </property>
+    <property name="visaIssuedBy" type="string">
+      <column length="25" name="VISA_ISSUED_BY"/>
+    </property>
+    <property name="visaIssueDate" type="date">
+      <column length="7" name="VISA_ISSUE_DATE"/>
+    </property>
+    <property name="visaValidUpto" type="date">
+      <column length="7" name="VISA_VALID_UPTO"/>
+    </property>
+  </class>
+</hibernate-mapping>

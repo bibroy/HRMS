@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.PhoneReimbursment" schema="HRMS" table="PHONE_REIMBURSMENT">
+    <id name="requestid" type="big_decimal">
+      <column name="REQUESTID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeid" type="string">
+      <column length="15" name="EMPLOYEEID"/>
+    </property>
+    <property name="phoneno" type="big_decimal">
+      <column name="PHONENO" precision="22" scale="0"/>
+    </property>
+    <property name="totalamount" type="java.lang.Double">
+      <column name="TOTALAMOUNT" precision="126" scale="0"/>
+    </property>
+    <property name="requestdate" type="date">
+      <column length="7" name="REQUESTDATE"/>
+    </property>
+    <property name="approvalstatus" type="string">
+      <column length="10" name="APPROVALSTATUS"/>
+    </property>
+    <property name="approvaldate" type="date">
+      <column length="7" name="APPROVALDATE"/>
+    </property>
+    <property name="phonebillid" type="big_decimal">
+      <column name="PHONEBILLID" precision="22" scale="0"/>
+    </property>
+    <property name="approvedBy" type="string">
+        <column name="APPROVEDBY" length="20"/>
+    </property>
+  </class>
+</hibernate-mapping>

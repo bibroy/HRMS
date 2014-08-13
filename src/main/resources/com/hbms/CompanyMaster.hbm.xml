@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.Company" schema="HRMS" table="COMPANY_MASTER">
+    <id name="companyCode" type="big_decimal">
+      <column name="COMPANY_CODE" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="companyName" type="string">
+      <column name="COMPANY_NAME"/>
+    </property>
+    <property name="contactno" type="string">
+      <column length="20" name="CONTACTNO"/>
+    </property>
+    <property name="regaddress" type="string">
+      <column name="REGADDRESS"/>
+    </property>
+    <property name="corptaddress" type="string">
+      <column name="CORPTADDRESS"/>
+    </property>
+    <property name="entrydate" type="date">
+      <column length="7" name="ENTRYDATE"/>
+    </property>
+    <property name="modifydate" type="date">
+      <column length="7" name="MODIFYDATE"/>
+    </property>
+    <property name="createdby" type="big_decimal">
+      <column name="CREATEDBY" precision="22" scale="0"/>
+    </property>
+    <property name="modifiedby" type="big_decimal">
+      <column name="MODIFIEDBY" precision="22" scale="0"/>
+    </property>
+    <property name="status" type="string">
+      <column name="STATUS"/>
+    </property>
+    <property name="companyTypeid" type="big_decimal">
+      <column name="COMPANY_TYPEID" precision="22" scale="0"/>
+    </property>
+    <property name="countryoriginid" type="big_decimal">
+      <column name="COUNTRYORIGINID" precision="22" scale="0"/>
+    </property>
+    <property name="natureOfBusiness" type="string">
+      <column name="NATURE_OF_BUSINESS"/>
+    </property>
+    <property name="day" type="string">
+      <column name="DAY"/>
+    </property>
+    <property name="leaveWeeklyOff" type="string">
+      <column name="LEAVE_WEEKLY_OFF"/>
+    </property>
+    <property name="holidayWeeklyOff" type="string">
+      <column name="HOLIDAY_WEEKLY_OFF"/>
+    </property>
+    <property name="fromdate" type="string">
+      <column name="FROMDATE"/>
+    </property>
+    <property name="todate" type="string">
+      <column name="TODATE"/>
+    </property>
+    <property name="leavecal" type="string">
+      <column name="LEAVECAL"/>
+    </property>
+    <property name="grcompanyid" type="big_decimal">
+      <column name="GRCOMPANYID" precision="22" scale="0"/>
+    </property>
+    <property name="stateid" type="big_decimal">
+      <column name="STATEID" precision="22" scale="0"/>
+    </property>
+    <property name="cityid" type="big_decimal">
+      <column name="CITYID" precision="22" scale="0"/>
+    </property>
+    <property name="ptaxrate" type="big_decimal">
+      <column name="PTAXRATE" precision="22" scale="0"/>
+    </property>
+    <property name="registeraddrPincode" type="string">
+      <column length="20" name="REGISTERADDR_PINCODE"/>
+    </property>
+    <property name="corporateaddrPincode" type="string">
+      <column length="20" name="CORPORATEADDR_PINCODE"/>
+    </property>
+    <property name="finstartyear" type="string">
+      <column length="4" name="FINSTARTYEAR"/>
+    </property>
+    <property name="finendyear" type="string">
+      <column length="4" name="FINENDYEAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

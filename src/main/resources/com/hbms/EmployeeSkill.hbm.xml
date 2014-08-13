@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.EmployeeSkill" schema="HRMS" table="EMPLOYEE_SKILL">
+    <id name="id" type="big_decimal">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="employeeId" type="string">
+      <column length="15" name="EMPLOYEE_ID"/>
+    </property>
+    <many-to-one class="com.pojo.Skills" fetch="select" name="skillId">
+      <column name="SKILL_ID" precision="22" scale="0"/>
+   </many-to-one>
+    <property name="proficiencyLevel" type="string">
+      <column length="15" name="PROFICIENCY_LEVEL"/>
+    </property>
+    <property name="lastUsed" type="date">
+      <column length="7" name="LAST_USED"/>
+    </property>
+  </class>
+</hibernate-mapping>

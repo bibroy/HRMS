@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="EmployeeSkilladd" type="com.forms.EmpSkillForm"/>
+        <form-bean name="SuccessorForm" type="com.forms.SuccessorForm"/>
+        <form-bean name="EmployeeSkillForm" type="com.forms.EmpSkillForm"/>
+
+        <form-bean name="EmployeeFamilyDetailsForm" type="com.forms.EmployeeFamilyDetailsForm"/>
+        <form-bean name="EmployeeCertification" type="com.forms.EmployeeCertificationForm"/>
+        <form-bean name="TrainingFeedbackForm" type="com.forms.TrainingFeedbackForm"/>
+        <form-bean name="NewStrutsActionForm" type="com.forms.NewStrutsActionForm"/>
+        <form-bean name="TrainingNeedsForm" type="com.forms.TrainingNeedsForm"/>
+        <form-bean name="TrainingSheduleForm" type="com.forms.TrainingSheduleForm"/>
+        <form-bean name="TrainingCalenderForm" type="com.forms.TrainingCalenderForm"/>
+        <form-bean name="ClientForm" type="com.forms.ClientForm"/>
+        <form-bean name="WorkShiftForm" type="com.forms.WorkShiftForm"/>
+        <form-bean name="DepartmentForm" type="com.forms.DepartmentForm"/>
+        <form-bean name="EmployeePersonalInfoForm" type="com.forms.EmployeePersonalInfoForm"/>
+        <form-bean name="EmployeeExitDetailsForm" type="com.forms.EmployeeExitDetailsForm"/>
+        <form-bean name="EmployeeAccountsDetailEditForm" type="com.forms.EmployeeAccountsDetailEditForm"/>
+        <form-bean name="VisaPassportForm" type="com.forms.VisaPassportForm"/>
+
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+        
+    </global-forwards>
+
+    <action-mappings>
+        <action input="/" name="EmployeeAccountsDetailEditForm" parameter="method" path="/empaccountdetailpathserver" scope="session" type="com.action.EmployeeAccountsDetailEditAction" validate="false">
+            <forward name="success" path="/EmployeePersonalInfo/EmployeeAccountDetailsEdit.jsp"/>
+        </action>
+
+
+
+        <action input="/EmployeePersonalInfo/EmployeeVisaDetailEdit.jsp" name="VisaPassportForm" parameter="method" path="/empvisadetailpathserver" scope="session" type="com.action.VisaPassportDetails" validate="false">
+            <forward name="success" path="/EmployeePersonalInfo/EmployeeVisaDetailEdit.jsp"/>
+
+
+
+
+
+        </action>
+        <action input="/EmployeePersonalInfo/EmployeeExitDetailForm.jsp" name="EmployeeExitDetailsForm" parameter="method" path="/empexitdetailserverpath" scope="session" type="com.action.EmployeePersonalInfoAction" validate="false">
+            <forward name="success" path="/EmployeePersonalInfo/EmployeeExitDetailForm.jsp"/>
+            
+        </action>
+        <action input="/EmployeePersonalInfo/EmployeeDetailInformationReport.jsp" name="EmployeePersonalInfoForm" parameter="method" path="/viewEmpDetailsReport" scope="session" type="com.action.EmployeePersonalInfoAction" validate="false">
+
+            <forward  name="success" path="/EmployeePersonalInfo/EmployeeDetailInformationReport.jsp"/>
+        </action>
+        <action input="/EmployeePersonalInfo/ReportbyBranch.jsp" name="EmployeeExitDetailsForm" parameter="method" path="/ReportviewbybranchId" scope="session" type="com.action.EmployeePersonalInfoAction" validate="false">
+
+            <forward  name="success" path="/EmployeePersonalInfo/ReportbyBranch.jsp"/>
+
+        </action>
+        <action input="/VisaPassport/VisaPassportRenewalReport.jsp" name="VisaPassportForm" parameter="method" path="/visapassportrenewalreport" scope="session" type="com.action.VisaPassportDetails" validate="false">
+
+            <forward  name="success" path="/VisaPassport/VisaPassportRenewalReport.jsp"/>
+
+        </action>
+        <action input="/EmployeePersonalInfo/ReportByDepartmentNames.jsp" name="DepartmentForm" parameter="method" path="/ReportByDepartment" scope="session" type="com.action.EmployeePersonalInfoAction" validate="false">
+
+
+            <forward  name="success" path="/EmployeePersonalInfo/ReportByDepartmentNames.jsp"/>
+
+        </action>
+        <action input="/EmployeePersonalInfo/RunawayReport.jsp" name="EmployeeExitDetailsForm" parameter="method" path="/runawayReport" scope="session" type="com.action.EmployeePersonalInfoAction" validate="false">
+
+            <forward  name="success" path="/EmployeePersonalInfo/RunawayReport.jsp"/>
+
+        </action>
+        <action input="/EmployeePersonalInfo/ReportbyGradeSystem.jsp" name="EmployeePersonalInfoForm" parameter="method" path="/GradesDetails" scope="session" type="com.action.EmployeePersonalInfoAction" validate="false">
+            <forward  name="success" path="/EmployeePersonalInfo/ReportbyGradeSystem.jsp"/>
+        </action>
+        <action input="/EmployeePersonalInfo/OrganisationStructureReport.jsp" name="EmployeePersonalInfoForm" parameter="method" path="/OrganizationStructureReport" scope="session" type="com.action.EmployeePersonalInfoAction" validate="false">
+
+            <forward  name="success" path="/EmployeePersonalInfo/OrganisationStructureReport.jsp"/>
+
+        </action>
+        <action input="/EmployeePersonalInfo/AddEmployeeDetails.jsp" name="EmployeePersonalInfoForm" parameter="method" path="/addEmployee" scope="session" type="com.action.EmployeePersonalInfoAction" validate="false">
+
+            <forward  name="success" path="/EmployeePersonalInfo/AddEmployeeDetails.jsp"/>
+
+        </action>
+
+        <action input="/ProjectManagement/WorkingTimeSheetReportofEmployee.jsp" name="TimeSheetForm" parameter="method" path="/workingtimeinformation" scope="session" type="com.action.TimeSheetAction" validate="false">
+            <forward  name="success" path="/ProjectManagement/WorkingTimeSheetReportofEmployee.jsp"/>
+        </action>
+        <action input="/ProjectManagement/ProjectStatusReport.jsp" name="ProjectForm" parameter="method" path="/projectstatusinf" scope="session" type="com.action.ProjectAction" validate="false">
+            <forward  name="success" path="/ProjectManagement/ProjectStatusReport.jsp"/>
+        </action>
+        <action input="/ProjectManagement/WorkShiftForm.jsp" name="WorkShiftForm" parameter="method" path="/workshift" scope="session" type="com.action.WorkShiftAction" validate="false">
+            <forward  name="success" path="/ProjectManagement/WorkShiftForm.jsp"/>
+        </action>
+        <action input="/ProjectManagement/clientReport.jsp" name="ClientForm" parameter="method" path="/clientstatusinfo" scope="session" type="com.action.ClientAction" validate="false">
+            <forward  name="success" path="/ProjectManagement/clientReport.jsp"/>
+        </action>
+        <action input="/Training/TrainingCalender.jsp" name="TrainingCalenderForm" parameter="method" path="/trainingcalender" scope="session" type="com.action.TrainingAction" validate="false">
+            <forward  name="success" path="/Training/TrainingCalender.jsp"/>
+        </action>
+        <action input="/Training/TrianingShedule.jsp" name="TrainingSheduleForm" parameter="method" path="/trainingShedule" scope="session" type="com.action.TrainingAction" validate="false">
+            <forward  name="success" path="/Training/TrianingShedule.jsp"/>
+        </action>
+        <action input="/Training/TrainingNeedsforEmployee.jsp" name="TrainingNeedsForm" parameter="method" path="/trainingneeds" scope="session" type="com.action.TrainingAction" validate="false">
+
+            <forward  name="success"  path="/Training/TrainingNeedsforEmployee.jsp"/>
+            <forward  name="employees" path="/Training/trainingRequestHOD.jsp"/>
+
+        </action>
+        <action input="/Training/TrainerFeedback.jsp" name="TrainingFeedbackForm" parameter="method" path="/trainerfeedback" scope="session" type="com.action.TrainingAction" validate="false">
+
+            <forward  name="success"  path="/Training/TrainerFeedback.jsp"/>
+            
+        </action>
+        <action input="/Training/TrainingFeedbackReport.jsp" name="TrainingFeedbackForm" parameter="method" path="/trainerfeedbackreport" scope="session" type="com.action.TrainingAction" validate="false">
+            <forward  name="success"  path="/Training/TrainingFeedbackReport.jsp"/>
+
+
+        </action>
+        <action input="/EmployeePersonalInfo/EmployeeCertification.jsp" name="EmployeeCertificationForm" parameter="method" path="/empcertification" scope="session" type="com.action.EmployeeCertificationAction" validate="false">
+            <forward  name="success"  path="/EmployeePersonalInfo/EmployeeCertification.jsp"/>
+        </action>
+        <action input="/EmployeePersonalInfo/EmployeeFamilyDetails.jsp" name="EmployeeFamilyDetailsForm" parameter="method" path="/EmployeeFamilyDetailsAction" scope="session" type="com.action.EmployeeFamilyDetailsAction" validate="false">
+
+            <forward  name="success"  path="/EmployeePersonalInfo/EmployeeFamilyDetails.jsp"/>
+        </action>
+
+        <action input="/Succession/KeyPositionEntryForm.jsp" name="KeyPositionForm" parameter="method" path="/KeyPositionEntry" scope="session" type="com.action.SuccessionAction" validate="false">
+            <forward  name="success"  path="/Succession/KeyPositionEntryForm.jsp"/>
+        </action>
+
+        <action input="/Succession/KeyPositions.jsp" name="KeyPositionForm" parameter="method" path="/successionemp" scope="session" type="com.action.SuccessionAction" validate="false">
+
+            <forward  name="success"  path="/Succession/KeyPositions.jsp"/>
+            <forward name="positionreport" path="/Succession/KeyPositions.jsp"/>
+
+            <forward name="emplistsuccession" path="/Succession/SuccessionEmployeeReport.jsp"/>
+        </action>
+        <action input="/Succession/SuccessionEmployeeReport.jsp" name="SuccessorForm" parameter="method" path="/keypositionskill" scope="session" type="com.action.SuccessionAction" validate="false">
+            <forward  name="success"  path="/Succession/SuccessionEmployeeReport.jsp"/>
+
+        </action>
+        <action input="/EmployeePersonalInfo/EditSkillOfEmployee.jsp" name="EmpSkillForm" parameter="method" path="/empskilledit" scope="session" type="com.action.EmployeeSkillAction" validate="false">
+            <forward  name="success"  path="/Succession/EditSkillOfEmployee.jsp"/>
+        </action>
+        <action input="/EmployeePersonalInfo/EmployeeSkillAddpage.jsp" name="EmpSkillForm" parameter="method" path="/employeeaddskill" scope="request" type="com.action.EmployeeSkillAction" validate="false">
+            <forward name="success" path="/EmployeePersonalInfo/EmployeeSkillAddpage.jsp"/>
+        </action>
+        <action parameter="/Training/TrainingFeedbackReport.jsp" path="/trainingfeedbac" type="org.apache.struts.actions.ForwardAction"/>
+        <action parameter="/Training/TrainerFeedback.jsp" path="/trainingfeedback" type="org.apache.struts.actions.ForwardAction"/>
+        
+        <action input="/ProjectManagement/clientReport.jsp" name="ClientForm" parameter="/ProjectManagement/clientReport.jsp" path="/clientstatusreport" scope="session" type="org.apache.struts.actions.ForwardAction" validate="false"/>
+        <action input="/ProjectManagement/ProjectStatusReport.jsp" name="ProjectForm" parameter="/ProjectManagement/ProjectStatusReport.jsp" path="/openprojReport" scope="session" type="org.apache.struts.actions.ForwardAction" validate="false"/>
+
+
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class lazy="false" name="com.pojo.CountryMaster" schema="HRMS" table="COUNTRY_MASTER">
+    <id name="countryId" type="big_decimal">
+      <column name="COUNTRY_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="countryName" type="string">
+      <column length="50" name="COUNTRY_NAME"/>
+    </property>
+    <property name="currencyName" type="string">
+      <column length="25" name="CURRENCY_NAME"/>
+    </property>
+    <property name="creationDate" type="date">
+      <column length="7" name="CREATION_DATE"/>
+    </property>
+    <property name="modificationDate" type="date">
+      <column length="7" name="MODIFICATION_DATE"/>
+    </property>
+    <property name="createdBy" type="string">
+      <column length="10" name="CREATED_BY"/>
+    </property>
+    <property name="modifiedBy" type="string">
+      <column length="10" name="MODIFIED_BY"/>
+    </property>
+    <property name="status" type="string">
+      <column length="10" name="STATUS"/>
+    </property>
+    <property name="currencyAbbreviation" type="string">
+      <column length="25" name="CURRENCY_ABBREVIATION"/>
+    </property>
+    <set inverse="true" name="stateMasters">
+      <key>
+        <column name="COUNTRY_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="com.pojo.State"/>
+    </set>
+  </class>
+</hibernate-mapping>

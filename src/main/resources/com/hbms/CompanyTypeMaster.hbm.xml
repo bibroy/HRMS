@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.CompanyTypeMaster" schema="HRMS" table="COMPANY_TYPE_MASTER">
+    <id name="compTypeId" type="big_decimal">
+      <column name="COMP_TYPE_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="compTypeName" type="string">
+      <column length="100" name="COMP_TYPE_NAME" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

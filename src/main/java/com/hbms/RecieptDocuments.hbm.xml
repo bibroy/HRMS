@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.RecieptDocuments" schema="HRMS" table="RECIEPT_DOCUMENTS">
+    <id name="recieptid" type="big_decimal">
+      <column name="RECIEPTID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="filetype" type="string">
+      <column length="10" name="FILETYPE"/>
+    </property>
+    <property name="pathname" type="string">
+      <column length="100" name="PATHNAME"/>
+    </property>
+    <property name="status" type="string">
+      <column length="10" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

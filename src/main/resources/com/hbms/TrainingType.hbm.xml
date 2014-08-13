@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2010 2:05:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.pojo.TrainingType" schema="HRMS" table="TRAINING_TYPE">
+    <id name="trainingTypeId" type="big_decimal">
+      <column name="TRAINING_TYPE_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="typeName" type="string">
+      <column length="17" name="TYPE_NAME"/>
+    </property>
+    <property name="status" type="string">
+      <column length="2" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>
